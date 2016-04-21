@@ -1,0 +1,47 @@
+class ExtensiveMedicalsystem
+{
+    class Drugs
+    {
+        /* EXAMPLE
+        class Base
+        {
+            Displayname = "";       //Displayed name of given drug
+            TransitionPerTick = 0;  //Transition happening per calculation tick
+            MaxValue = -1;          //Sets max value "the body of a patient can consume" (max value in system reachable) [-1 -> no limit]
+
+            BloodThikness = 1;      //Sets how much this drug will affect the hemostasis [0 -> never happens, 1 -> no effect, 2 -> happens twice as fast]
+            Pain = 1;               //Sets how this drug changes the patiens pain [0 -> no pain, 1 -> no effect, 2 -> happens twice as fast]
+            Vision = 1;             //Sets how much this drug will affect the vision [0 -> confused vision (waves, partial black), 1 -> no effect, 2 -> "focused" vision (radial blur)]
+            
+            
+            class Affects
+            {
+                class Base
+                {
+                    Name = "";  //Name of external class
+                    Value = ""; //Calculation to use (%1 will contain ThisDrug current, %2 will contain AffectedDrug current)
+                };
+            };
+            class BlackOut
+            {
+                class Base
+                {
+                    Stage = 0;              //BlackOut Stage to fall into
+                    Condition = "false";    //Condition on which you will fall into set stage
+                    FollowedBy = "";        //BlackOut class to fall into after this
+                };
+            };
+            class Items
+            {
+                class Base
+                {
+                    DisplayName = "";   //Display name of this item internally
+                    Image = "";         //Display image
+                    Classname = "";     //Item classname to consume
+                    Value = "";         //Value to change
+                };
+            };
+        };
+        */
+    };
+};
