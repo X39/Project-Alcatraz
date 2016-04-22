@@ -5,7 +5,7 @@
 * SQF files have to use the extension `.sqf`
 * All Textures have to be in the `.paa` format
 
-##Max Characters per line
+##Max Characters per line in SQF files
 The character limit per line is 100.
 
 **Reason:**
