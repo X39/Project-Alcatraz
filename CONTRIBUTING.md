@@ -42,3 +42,10 @@ The file header should contain the basic information about what this file is use
  *      Only needed if function actually does throw something
  */
 ```
+Functions which throw always need to throw following kind of array:
+`[<ID>, <Message>, <Content>]`
+
+further details:
+* `<ID>` ID which is registered in `\X39_XMed_Scripting\exceptionIdds.hpp`
+* `<Message>` Message this exception contains
+* `<Content>` either nil or further content (everything is allowed in here)
