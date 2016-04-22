@@ -1,2 +1,2 @@
-#define EX_ID_DRUG_SELF 0
-#define EX_ID_DRUG_UNKNOWN 1
+#define EX_ID_DRUG_LINK_SELF 0
+#define EX_ID_DRUG_LINK_UNKNOWN 1
