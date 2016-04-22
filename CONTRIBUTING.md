@@ -42,6 +42,7 @@ The file header should contain the basic information about what this file is use
  *      Only needed if function actually does throw something
  */
 ```
+##Exceptions (Throw arguments)
 Functions which throw always need to throw following kind of array:
 `[<ID>, <Message>, <Content>]`
 
