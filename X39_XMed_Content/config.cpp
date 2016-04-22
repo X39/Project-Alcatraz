@@ -12,8 +12,9 @@ class ExtensiveMedicalsystem
             BloodThikness = 1;      //Sets how much this drug will affect the hemostasis [0 -> never happens, 1 -> no effect, 2 -> happens twice as fast]
             Pain = 1;               //Sets how this drug changes the patiens pain [0 -> no pain, 1 -> no effect, 2 -> happens twice as fast]
             Vision = 1;             //Sets how much this drug will affect the vision [0 -> confused vision (waves, partial black), 1 -> no effect, 2 -> "focused" vision (radial blur)]
-            
-            
+            Coloring = 1;           //Sets how much this drug will affect the coloring of players vision [0 -> grey, 1 -> no effect, 2 -> "strong" colors]
+
+
             class Affects
             {
                 class Base
