@@ -47,6 +47,6 @@ Functions which throw always need to throw following kind of array:
 `[<ID>, <Message>, <Content>]`
 
 further details:
-* `<ID>` ID which is registered in `\X39_XMed_Scripting\exceptionIdds.hpp`
+* `<ID>` ID which is registered in `\X39_XMed_Scripting\exceptionIds.hpp`
 * `<Message>` Message this exception contains
 * `<Content>` either nil or further content (everything is allowed in here)
