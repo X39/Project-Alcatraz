@@ -1,0 +1,2 @@
+#define EX_ID_DRUG_SELF 0
+#define EX_ID_DRUG_UNKNOWN 1
