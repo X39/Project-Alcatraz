@@ -43,6 +43,7 @@ The file header should contain the basic information about what this file is use
  *
  * Throws:
  *      Only needed if function actually does throw something
+ *      If you do throw, list each exception case that can occur here!
  */
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
