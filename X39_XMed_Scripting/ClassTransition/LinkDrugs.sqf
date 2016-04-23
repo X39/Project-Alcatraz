@@ -11,7 +11,8 @@
  * Return:
  *      -/-
  * Throws:
- *      Will throw an exception in case of any error (eg. classes try to cross-affect each other)
+ *      EX_ID_DRUG_LINK_SELF    will be thrown if drug trys to affect itself
+ *      EX_ID_DRUG_LINK_UNKNOWN will be thrown if the drug trys to affect an unknown drug
  */
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
@@ -37,6 +38,7 @@ _ClassesClassnameArray = [];
             throw [
                 EX_ID_DRUG_LINK_UNKNOWN,
                 format["Self affection on drug '%1'", _cur select CT_OFF_DRUG_CLASSNAME],
+                STACKTRACE,
                 nil
             ];
         };
@@ -51,6 +53,7 @@ _ClassesClassnameArray = [];
                         _x select CT_OFF_DRUG_AFFECTS_NAME,
                         _cur select CT_OFF_DRUG_CLASSNAME
                 ],
+                STACKTRACE,
                 nil
             ];
         };
