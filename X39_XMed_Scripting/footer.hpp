@@ -12,5 +12,7 @@
 #ifdef DOCALLTRACE
 	___callTrace___ deleteAt (count ___callTrace___) - 1;
 #endif
-if(!isNil "___returnedValue___") exitWith {___returnedValue___};
-___returnValue___
+#ifndef DISABLERETURN
+    if(!isNil "___returnedValue___") exitWith {___returnedValue___};
+    ___returnValue___
+#endif
