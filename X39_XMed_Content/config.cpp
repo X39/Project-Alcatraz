@@ -21,6 +21,7 @@ class ExtensiveMedicalsystem
                 {
                     Name = "";  //Name of external class
                     Value = ""; //Calculation to use (%1 will contain ThisDrug current, %2 will contain AffectedDrug current)
+                    CalculationType = "+";
                 };
             };
             class BlackOut
@@ -28,7 +29,7 @@ class ExtensiveMedicalsystem
                 class Base
                 {
                     Stage = 0;              //BlackOut Stage to fall into
-                    Condition = "false";    //Condition on which you will fall into set stage
+                    Condition = "false";    //Condition on which you will fall into set stage, %1 contains current unit, %2 contains current drug value, %3 contains max drug value
                     FollowedBy = "";        //BlackOut class to fall into after this
                 };
             };

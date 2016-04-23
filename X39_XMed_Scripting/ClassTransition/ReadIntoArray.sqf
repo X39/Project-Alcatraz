@@ -67,6 +67,8 @@ for "_i" from 0 to (_cfgCount - 1) do
                             [_subClass, "Name", ""] call BIS_fnc_returnConfigEntry];
             _tmpArray set [CT_OFF_DRUG_AFFECTS_VALUE,
                             [_subClass, "Value", ""] call BIS_fnc_returnConfigEntry];
+            _tmpArray set [CT_OFF_DRUG_AFFECTS_CALCULATIONTYPE,
+                            [_subClass, "CalculationType", "+"] call BIS_fnc_returnConfigEntry];
             _arr pushBack _innerArray;
         };
         _tmpArray set [CT_OFF_DRUG_AFFECTS, _arr];
