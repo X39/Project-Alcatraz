@@ -55,7 +55,8 @@ The file header should contain the basic information about what this file is use
 ```
 ##Exceptions (Throw arguments)
 Functions which throw always need to throw following kind of array:
-`[<ID>, <Message>, <Content>]`
+`[<ID>, <Message>, STACKTRACE, <Content>]`
+Please note that `STACKTRACE` is a define you can use if you included the header.hpp correctly
 
 further details:
 * `<ID>` ID which is registered in `\X39_XMed_Scripting\exceptionIds.hpp`
