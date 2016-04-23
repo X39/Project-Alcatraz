@@ -65,3 +65,10 @@ further details:
 * `<ID>` ID which is registered in `\X39_XMed_Scripting\exceptionIds.hpp`
 * `<Message>` Message this exception contains
 * `<Content>` either nil or further content (everything is allowed in here)
+
+##Unit Variables
+Every unit variable has to be added to the UnitVariables config class
+
+**Reason:** ExtensiveMedicalsystem handles unit variables in a quite special way in many aspects.
+thus it is required to write them down properly with additional informations so that handling works correctly on every system.
+It also has the positive side effect that you really have to think if you need that variable and how to do various other things.
