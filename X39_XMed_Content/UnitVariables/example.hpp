@@ -15,6 +15,7 @@ class Example
                                 //Returns: -/-
         
         uninit = "";            //Callen whenever the variable has to be removed from a unit.
+                                //Also gets callen AFTER the localityChange event
                                 //Receives: [<VARNAME:STRING>, <UNIT:OBJECT>]
                                 //Returns: -/-
         
