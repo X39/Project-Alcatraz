@@ -6,6 +6,8 @@
 #define FNCS(EXT) STR(FNC(EXT))
 #define GVARS(EXT) STR(GVAR(EXT))
 
+#define EXNOTIMPLEMENTED throw [EX_ID_GENERIC_NOTIMPLEMENTED, "Not Implemented", STACKTRACE, nil]
+
 #ifdef DEBUG
     //If in debug mode, enable tracing & printing call arguments
     #define DOTRACE
