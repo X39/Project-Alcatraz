@@ -14,11 +14,13 @@ To make reading through code one just one monitor half easier (eg. because you n
 
 ##Local variables
 All local variables have to be *reserved* in a `private [...]` command of the respective scope
+
 **Reason:** To quickly see which variable belongs to which scope, it is needed to have a single overview of all variables used in that specific scope.
 This is provided by the `private <ARRAY>` command. ((also it is slightly faster then other solutions))
 
 ##Passed Arguments
 Arguments ALWAYS have to be passed inside an array (no args -> empty array)
+
 **Reason:** To not be in need to check how each function wants its argument to have, all arguments have to be passed inside of arrays
 this also affects functions which only use a single in-argument
 
