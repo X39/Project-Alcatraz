@@ -4,6 +4,7 @@
 #define GVAR(EXT) X39_XMed_var_##EXT
 
 #ifdef DEBUG
-    //If in debug mode, enable tracing
-    #define DOCALLTRACE
+    //If in debug mode, enable tracing & printing call arguments
+    #define DOTRACE
+    #define DOCARGS
 #endif
