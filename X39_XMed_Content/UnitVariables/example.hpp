@@ -4,10 +4,11 @@ class Example
     Description = "";           //What does this variable do
     Default = "0";              //Default Value, gets call compiled
     Local = false;              //Sets if this variable is broadcasted or not
-    Transition = "";            //Code which handles the transition of this variable
-    isLive = false;             //Sets if this variable is a "live" variable that gets propagated
+    isLive = true;              //Sets if this variable is a "live" variable that gets propagated
                                 //instant on change or if it should only change
                                 //when the propagate tick runs over it (delayed change)
+                                //Live update itself is not automatically done
+                                //(use setVariable with true as third parameter instead of just two parameters)
     class Events
     {
         init = "";              //Callen whenever the variable gets initialized on a new unit.
