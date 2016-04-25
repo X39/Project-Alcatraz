@@ -1,1 +1,2 @@
 #define DEBUG
+#define COMMA ,

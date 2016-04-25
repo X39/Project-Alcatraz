@@ -6,6 +6,10 @@
 #define FNCS(EXT) STR(FNC(EXT))
 #define GVARS(EXT) STR(GVAR(EXT))
 
+#define UVAR(UNT, EXT) (UNT getVariable GVARS(EXT))
+#define SETUVAR3(UNT, EXT, VAL) (UNT setVariable [GVARS(EXT), VAL])
+#define SETUVAR4(UNT, EXT, VAL, THIRD) (UNT setVariable [GVARS(EXT), VAL, THIRD])
+
 #define EXNOTIMPLEMENTED throw [EX_ID_GENERIC_NOTIMPLEMENTED, "Not Implemented", STACKTRACE, nil]
 
 #ifdef DEBUG
