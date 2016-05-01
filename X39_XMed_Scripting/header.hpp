@@ -3,7 +3,6 @@
 #else
 	throw "_DEFAULT_HEADER_ defined more then once";
 #endif
-#define RETURN(VALUE) ___returnValue___ = VALUE; breakOut "___returnScope___";
 
 #ifdef DOTRACE
     #define STACKTRACE (str ___callTrace___)
@@ -42,9 +41,12 @@
 	};
 #endif
 #ifndef DISABLERETURN
+    #define RETURN(VALUE) ___returnValue___ = VALUE; breakOut "___returnScope___";
 	private ["___returnValue___", "___returnedValue___"];
 	___returnedValue___ = _this call {
 	scopeName "___returnScope___";
+#else
+    #define RETURN(VALUE) throw [-1, "RETURN(VALUE) define is not enabled", STACKTRACE, nil]
 #endif
 #ifdef VARIABLENAMESPACE
 	with VARIABLENAMESPACE do

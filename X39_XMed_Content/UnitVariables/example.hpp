@@ -9,7 +9,7 @@ class Example
                                 //when the propagate tick runs over it (delayed change)
                                 //Live update itself is not automatically done
                                 //(use setVariable with true as third parameter instead of just two parameters)
-    class Events
+    class Events                //Function names in missionNamespace are supposed to be placed in theese
     {
         init = "";              //Callen whenever the variable gets initialized on a new unit.
                                 //Receives: [<VARNAME:STRING>, <UNIT:OBJECT>]

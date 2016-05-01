@@ -3,12 +3,10 @@
  *      X39
  * 
  * Description:
- *      Moves given unit from one client to another safely (locality change)
+ *      removes the mod tick from this unit
  * 
  * Arguments:
- *      [
- *          <object>
- *      ]
+ *      [<UNIT:OBJECT>]
  * 
  * Return:
  *      -/-
@@ -17,6 +15,6 @@
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
 
-EXNOTIMPLEMENTED;
+
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

@@ -14,6 +14,7 @@
  * Return:
  *      -/-
  */
+#define DISABLERETURN
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
 

@@ -1,3 +1,4 @@
+#include "default.hpp"
 class ExtensiveMedicalsystem
 {
     class Drugs

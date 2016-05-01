@@ -5,6 +5,7 @@
 #define GVAR(EXT) X39_XMed_var_##EXT
 #define FNCS(EXT) STR(FNC(EXT))
 #define GVARS(EXT) STR(GVAR(EXT))
+#define EXIT(MSG) [MSG] call BIS_fnc_halt
 
 #define UVAR(UNT, EXT) (UNT getVariable GVARS(EXT))
 #define SETUVAR3(UNT, EXT, VAL) (UNT setVariable [GVARS(EXT), VAL])
