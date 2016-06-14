@@ -7,3 +7,38 @@ class CfgFunctions
         #include "functions.cpp"
     }
 };
+class CfgVehicles
+{
+    class Man;
+    class CAManBase: Man
+    {
+        class HitPoints
+        {
+            class LeftArm
+            {
+                armor = 1;
+                material = -1;
+                name = "hand_l";
+                passThrough = 1;
+                radius = 0.08;
+                explosionShielding = 1;
+                visual = "injury_hands";
+                minimalHit = 0.01;
+            };
+            class RightArm: LeftArm
+            {
+                name = "hand_r";
+            };
+            class LeftLeg : LeftArm
+            {
+                name = "leg_l";
+                radius = 0.1;
+                visual = "injury_legs";
+            };
+            class RightLeg: LeftLeg
+            {
+                name = "leg_r";
+            };
+        };
+    };
+};

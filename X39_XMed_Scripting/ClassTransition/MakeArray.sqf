@@ -24,14 +24,19 @@ for "_i" from 0 to ((count _tmp) - 1) do
 {
     (_ReadElements select _i) append (_tmp select _i);
 };
-//ToDo: Link everything together & generate the functions needed
 //REGION LINK DRUGS
 try
 {
-    
-    (_ReadElements select 0) call FNC(CT_LinkDrugs);
-    _functions append (_ReadElements select 0) call FNC(CT_CompileDrugs);
-    (_ReadElements select 1) call FNC(CT_CompileUserVariables);
+    try
+    {
+        (_ReadElements select 0) call FNC(CT_LinkDrugs);
+    }
+    catch
+    {
+        EXIT(format["Exception thrown while linking drugs: %1" COMMA _exception]);
+    }
+    _functions append (_ReadElements select CT_OFF_DRUG) call FNC(CT_CompileDrugs);
+    (_ReadElements select CT_OFF_UNITVARS) call FNC(CT_CompileUserVariables);
 }
 catch
 {

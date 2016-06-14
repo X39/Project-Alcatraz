@@ -58,7 +58,7 @@ _ClassesClassnameArray = [];
             ];
         };
         //Add drug to AffectedBy array for later code generation
-        _AffectedBy pushBack (_ClassesLinkageArray select _index select 0);
+        _AffectedBy pushBack _index;
         false
     } count (_cur select CT_OFF_DRUG_AFFECTS);
     false

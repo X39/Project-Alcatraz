@@ -18,7 +18,6 @@
 params ["_unit"];
 private ["_tickCount", "_index", "_tickTimeout", "_properties"];
 
-//diag_fps
 _tickTimeout = UVAR(_unit, Tick_TimeoutCount);
 if (_tickTimeout <= 0) then
 {
@@ -38,7 +37,8 @@ if (_tickTimeout <= 0) then
         }
         else
         {
-            [_unit] call (missionNamespace getVariable (GVAR(Ticks) select _index select 0));
+            //ToDo: Replace 1 with a compensation factor for FPS (to prevent FPS "hacking")
+            [_unit, 1] call (missionNamespace getVariable (GVAR(Ticks) select _index select 0));
             _properties set [_index, GVAR(Ticks) select _index select 1];
         };
         SETUVAR3(_unit, Tick_Properties, _properties);
