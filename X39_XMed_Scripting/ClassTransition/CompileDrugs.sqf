@@ -85,7 +85,7 @@ _OutArray = [];
         VARPREFIX,
         (_DrugArray select CT_OFF_DRUG_CLASSNAME)
     ];
-    _ThisArray set [OFF_DRUG_INITFNC, _tmpFnc];
+    _ThisArray set [OFF_DRUG_INITFNC, compile _tmpFnc];
     //ENDREGION
     //REGION uninit function
     _tmpFnc = 'params ["_unit"]; private ["_tmp"];';
@@ -116,12 +116,45 @@ _OutArray = [];
         VARPREFIX,
         (_DrugArray select CT_OFF_DRUG_CLASSNAME)
     ];
-    _ThisArray set [OFF_DRUG_UNINITFNC, _tmpFnc];
+    _ThisArray set [OFF_DRUG_UNINITFNC, compile _tmpFnc];
     //ENDREGION
     //REGION tick function
-    _tmpFnc = 'params ["_unit", "_CFac"]; private ["_tmp"];';
-    //ToDo: Implement Tick function generation
-    _ThisArray set [OFF_DRUG_TICKFNC, _tmpFnc];
+    _tmpFnc = '';
+    
+    //Value updates
+    {
+        _tmpFnc = _tmpFnc + format [
+            "_tmpValue = _unit getVariable [%1, 0];",
+            format [
+                "%1Drug_%2",
+                VARPREFIX,
+                _InArray select _x select 0 
+                select CT_OFF_DRUG_LNK_DRUG select CT_OFF_DRUG_CLASSNAME
+            ]
+        ];
+        _tmpFnc = _tmpFnc + format [
+            '_currentValue = _currentValue %1 (%2);',
+            _x select 1 select CT_OFF_DRUG_AFFECTS_CALCULATIONTYPE,
+            format [
+                _x select 1 select CT_OFF_DRUG_AFFECTS_VALUE,
+                "_currentValue",
+                "_tmpValue"
+            ]
+        ];
+        false
+    } count _LinkArray;
+    
+    //Effect Updates
+    //ToDo: Update effects
+    
+    _tmpFnc = str formatText [
+        preProcessFileLineNumbers "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\template_updateDrug.sqf",
+        _DrugArray select CT_OFF_DRUG_CLASSNAME,
+        format ["%1Drug_%2", VARPREFIX, (_DrugArray select CT_OFF_DRUG_CLASSNAME)],
+        _DrugArray select CT_OFF_DRUG_TRANSITIONPERTICK,
+        _tmpFnc
+    ];
+    _ThisArray set [OFF_DRUG_TICKFNC, compile _tmpFnc];
     //ENDREGION
     //REGION add value function
     _tmpFnc = 'params ["_unit", "_value"];';
@@ -135,7 +168,7 @@ _OutArray = [];
             (_DrugArray select CT_OFF_DRUG_CLASSNAME)
         ];
     ];
-    _ThisArray set [OFF_DRUG_ADDVAL, _tmpFnc];
+    _ThisArray set [OFF_DRUG_ADDVAL, compile _tmpFnc];
     //ENDREGION
     //REGION set value function
     _tmpFnc = 'params ["_unit", "_value"];';
@@ -144,7 +177,7 @@ _OutArray = [];
         VARPREFIX,
         (_DrugArray select CT_OFF_DRUG_CLASSNAME)
     ];
-    _ThisArray set [OFF_DRUG_SETVAL, _tmpFnc];
+    _ThisArray set [OFF_DRUG_SETVAL, compile _tmpFnc];
     //ENDREGION
     //REGION get value function
     _tmpFnc = 'params ["_unit"];';
@@ -153,7 +186,7 @@ _OutArray = [];
         VARPREFIX,
         (_DrugArray select CT_OFF_DRUG_CLASSNAME)
     ];
-    _ThisArray set [OFF_DRUG_GETVAL, _tmpFnc];
+    _ThisArray set [OFF_DRUG_GETVAL, compile _tmpFnc];
     //ENDREGION
     
 } forEach _InArray;
