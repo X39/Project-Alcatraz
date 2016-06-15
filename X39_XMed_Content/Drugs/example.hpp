@@ -16,7 +16,7 @@ class Base
         {
             Name = "";  //Name of external class
             Value = ""; //Calculation to use (%1 will contain ThisDrug current, %2 will contain AffectedDrug current)
-            CalculationType = "+";
+            CalculationType = "+"; //type of "addition" to the current value, eg. _cur = _cur + <Value>
         };
     };
     class BlackOut
