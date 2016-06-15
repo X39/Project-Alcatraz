@@ -25,7 +25,7 @@ _fnc_scriptName = "GenFunc_DrugUpdateTick_%1";
 #include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\CTArrayOffsets.hpp"
 
 params ["_unit"];
-private ["_currentValue"];
+private ["_currentValue", "_tmpValue"];
 _currentValue = _unit getVariable GVARS(%2);
 _currentValue = _currentValue + %3;
 
