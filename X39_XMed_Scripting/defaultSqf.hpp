@@ -23,5 +23,6 @@
     //If in debug mode, enable tracing & printing call arguments
     #define DOTRACE
     #define DOCARGS
+	#define DOCALLTRACE
 #endif
 #include "x\x39\ExtensiveMedicalsystem\scripting\GlobalVariables.hpp"

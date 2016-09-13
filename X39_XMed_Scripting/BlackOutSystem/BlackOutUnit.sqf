@@ -14,6 +14,13 @@
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
 
-EXNOTIMPLEMENTED;
+if (hasInterface) then
+{
+	private ["_dlgResult"];
+	_dlgResult = createDialog "XMS_BlackOutScreen";
+}
+else
+{
+};
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

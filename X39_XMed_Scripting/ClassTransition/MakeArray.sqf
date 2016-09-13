@@ -24,7 +24,6 @@ for "_i" from 0 to ((count _tmp) - 1) do
 {
     (_ReadElements select _i) append (_tmp select _i);
 };
-//REGION LINK DRUGS
 try
 {
     try
@@ -35,13 +34,14 @@ try
     {
         EXIT(format["Exception thrown while linking drugs: %1" COMMA _exception]);
     }
-    _functions append (_ReadElements select CT_OFF_DRUG) call FNC(CT_CompileDrugs);
-    (_ReadElements select CT_OFF_UNITVARS) call FNC(CT_CompileUserVariables);
+	_ResultArray set[CT_OFF_DRUG, (_ReadElements select CT_OFF_DRUG) call FNC(CT_CompileDrugs)];
+	_ResultArray set[CT_OFF_UNITVARS, (_ReadElements select CT_OFF_UNITVARS) call FNC(CT_CompileUserVariables)];
+	
+	RETURN(_ResultArray);
 }
 catch
 {
-    
+	EXIT(format["Exception thrown while compiling: %1" COMMA _exception]);
 };
-//ENDREGION
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

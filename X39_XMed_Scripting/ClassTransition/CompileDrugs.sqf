@@ -188,7 +188,10 @@ _OutArray = [];
     ];
     _ThisArray set [OFF_DRUG_GETVAL, compile _tmpFnc];
     //ENDREGION
-    
+    //ToDo: Implement BlackOut function
+	//ToDo: Implement item consume function
 } forEach _InArray;
+
+RETURN(_OutArray)
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

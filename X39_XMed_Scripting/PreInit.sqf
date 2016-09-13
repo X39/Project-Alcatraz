@@ -24,6 +24,7 @@
 private["_tmp"];
 
 _tmp = [] call FNC(CT_MakeArray);
+GVAR(Drug_Blackout) = _tmp select CT_OFF_DRUG select OFF_DRUG_BLACKOUT_CONDITION;
 GVAR(UnitVariables) = _tmp select CT_OFF_UNITVARS;
 
 //[<FUNCTIONNAME:STRING>, <TIMEOUT:SCALAR>]

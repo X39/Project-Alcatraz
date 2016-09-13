@@ -10,7 +10,7 @@
 };
 #endif
 #ifdef DOTRACE
-	___callTrace___ deleteAt (count ___callTrace___) - 1;
+	DROPTRACE
 #endif
 #ifndef DISABLERETURN
     if(!isNil "___returnedValue___") exitWith {___returnedValue___};
