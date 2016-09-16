@@ -43,7 +43,7 @@
 	};
 #endif
 #ifndef DISABLERETURN
-    #define RETURN(VALUE) DROPTRACE ___returnValue___ = VALUE; breakOut "___returnScope___";
+    #define RETURN(VALUE) ___returnValue___ = VALUE; breakOut "___returnScope___";
 	private ["___returnValue___", "___returnedValue___"];
 	___returnedValue___ = _this call {
 	scopeName "___returnScope___";
