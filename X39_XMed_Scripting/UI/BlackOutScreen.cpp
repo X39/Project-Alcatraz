@@ -1,8 +1,8 @@
 class XMS_BlackOutScreen
 {
 	idd = -1;
-	onLoad = "uiNamespace setVariable [""XMS_BlackOutScreen"", _this select 0]";
-	onUnload = "uiNamespace setVariable [""XMS_BlackOutScreen"", nil]";
+	onLoad = "_this call X39_XMed_fnc_BlackOutScreen_onLoad;";
+	onUnload = "_this call X39_XMed_fnc_BlackOutScreen_onUnload;";
 	class controls
 	{
 		class PulseBack: IGUIBack
@@ -15,6 +15,7 @@ class XMS_BlackOutScreen
 		};
 		class ImgBack: RscPicture
 		{
+			text = "x\x39\ExtensiveMedicalsystem\scripting\res\BlackOutScreen_TransparencyCircle.paa"
 			colorBackground = {0, 0, 0, 1};
 			x = "SafeZoneX + (0 / 1920) * SafeZoneW";
 			y = "SafeZoneY + (0 / 1080) * SafeZoneH";
@@ -33,6 +34,7 @@ class XMS_BlackOutScreen
 		{
 			colorBackground = {0, 0, 0, 1};
 			text = "Respawn";
+			idc = 2;
 			x = "SafeZoneX + (0 / 1920) * SafeZoneW";
 			y = "SafeZoneY + (1020 / 1080) * SafeZoneH";
 			w = "(225 / 1920) * SafeZoneW";

@@ -10,17 +10,12 @@
  * Return:
  *      -/-
  */
+#define DISABLERETURN
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
 
 params ["_text"];
 
-if (isNil {(uiNamespace getVariable ["XMS_BlackOutScreen"]) displayCtrl 1)}) then
-{
-	throw ;M
-};
-
-((uiNamespace getVariable ["XMS_BlackOutScreen"]) displayCtrl 1) ctrlSetText _text;
+uiNamespace setVariable ["XMS_BlackOutScreen_displaytext", _text];
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

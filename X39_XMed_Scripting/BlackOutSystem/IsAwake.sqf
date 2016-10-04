@@ -3,26 +3,24 @@
  *      X39
  * 
  * Description:
- *      blacks out unit (shows dialog if is player), disables various AI stuff on AI.
- *		Helper function for BOS_ChangeState. Not intended to be callen manually.
+ *      Checks if provided unit is awake or blacked out.
+ *      Unit variables this function uses:
+ *          - BOS_STATE
  * 
  * Arguments:
- *      <OBJECT>            Object to blackout
+ *      <OBJECT>            Object to check
  * Return:
- *      -/-
+ *      <BOOL>  TRUE if unit is awake, FALSE if blacked out (BOS_STATE != 0).
  * Throws:
  *      EX_ID_GENERIC_INVALID_ARG       if inArg0 is NULL object
  *      EX_ID_GENERIC_INVALID_ARG       if inArg0 is not having CAManBase as parent (--> vehicle)
- *      EX_ID_GENERIC_INVALID_LOCALITY  in case inArg0 is not local to current computer
  */
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
-
-
 params [
 	["_unit", objNull, [objNull]],
 ];
+//REGION Argument Validation
 if (isNull _unit) then
 {
     throw [
@@ -41,23 +39,6 @@ if (_unit isKindOf "CAManBase") then
         nil
     ];
 };
-if (!local _unit) then
-{
-    throw [
-        EX_ID_GENERIC_INVALID_LOCALITY,
-        format["inArg0 is not local to current computer"],
-        STACKTRACE,
-        nil
-    ];
-};
-
-if (hasInterface) then
-{
-	private ["_dlgResult"];
-	_dlgResult = createDialog "XMS_BlackOutScreen";
-}
-else
-{
-};
-
+//ENDREGION
+RETURN(UVAR(_unit, BOS_STATE) == 0)
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

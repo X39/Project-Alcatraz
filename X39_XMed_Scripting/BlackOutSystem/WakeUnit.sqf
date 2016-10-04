@@ -3,7 +3,8 @@
  *      X39
  * 
  * Description:
- *      wakes up unint (removes dialog if is player), enables various AI stuff on AI
+ *      wakes up unit (removes dialog if is player), enables various AI stuff on AI
+ *		Helper function for BOS_ChangeState. Not intended to be callen manually.
  * 
  * Arguments:
  *      <OBJECT>            Object to wake up

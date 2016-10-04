@@ -32,4 +32,11 @@ class BlackOutSystem
 	class BOS_BlackOutUnit          { file = "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\BlackOutUnit.sqf"; };
 	class BOS_ChangeDisplayText     { file = "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\ChangeDisplayText.sqf"; };
 	class BOS_CheckConditions       { file = "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\CheckConditions.sqf"; };
+	class BOS_IsAwake		       	{ file = "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\IsAwake.sqf"; };
+};
+
+class UI
+{
+	class BlackOutScreen_onLoad		{ file = "x\x39\ExtensiveMedicalsystem\scripting\UI\BlackOutScreen_onLoad.sqf"; };
+	class BlackOutScreen_onUnload	{ file = "x\x39\ExtensiveMedicalsystem\scripting\UI\BlackOutScreen_onUnload.sqf"; };
 };
