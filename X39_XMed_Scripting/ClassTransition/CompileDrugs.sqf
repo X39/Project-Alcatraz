@@ -18,7 +18,8 @@
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
 
 params ["_InArray"];
-private ["_OutArray"];
+private ["_OutArray", "_updateDrugTemplate"];
+_updateDrugTemplate = preProcessFileLineNumbers "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\template_updateDrug.sqf";
 _OutArray = [];
 {
     private ["_tmp"];
@@ -57,7 +58,7 @@ _OutArray = [];
         ];
         _tmpFnc = _tmpFnc + "{_x ppEffectEnable true; false} count _tmp;";
         _tmpFnc = _tmpFnc + format[
-            "(X39_XMed_var_XMedSysContent_DRUGS select %1 select %2) set [%3, _tmp];",
+            "(X39_XMed_var_Drug select %1 select %2) set [%3, _tmp];",
             _forEachIndex,
             OFF_DRUG_LOCAL,
             OFF_DRUG_LOCAL_VISIONEFFECT
@@ -72,7 +73,7 @@ _OutArray = [];
         ];
         _tmpFnc = _tmpFnc + "{_x ppEffectEnable true; false} count _tmp;";
         _tmpFnc = _tmpFnc + format[
-            "(X39_XMed_var_XMedSysContent_DRUGS select %1 select %2) set [%3, _tmp];",
+            "(X39_XMed_var_Drug select %1 select %2) set [%3, _tmp];",
             _forEachIndex,
             OFF_DRUG_LOCAL,
             OFF_DRUG_LOCAL_COLOREFFECT
@@ -90,7 +91,7 @@ _OutArray = [];
     if (_DrugArray select CT_OFF_DRUG_VISION != 1) then
     {
         _tmpFnc = _tmpFnc + format[
-            "_tmp = X39_XMed_var_XMedSysContent_DRUGS select %1 select %2 select %3;",
+            "_tmp = X39_XMed_var_Drug select %1 select %2 select %3;",
             _forEachIndex,
             OFF_DRUG_LOCAL,
             OFF_DRUG_LOCAL_VISIONEFFECT
@@ -100,7 +101,7 @@ _OutArray = [];
     if (_DrugArray select CT_OFF_DRUG_COLOR != 1) then
     {
         _tmpFnc = _tmpFnc + format[
-            "_tmp = X39_XMed_var_XMedSysContent_DRUGS select %1 select %2 select %3;",
+            "_tmp = X39_XMed_var_Drug select %1 select %2 select %3;",
             _forEachIndex,
             OFF_DRUG_LOCAL,
             OFF_DRUG_LOCAL_COLOREFFECT
@@ -144,7 +145,7 @@ _OutArray = [];
     //ToDo: Update effects
     
     _tmpFnc = str formatText [
-        preProcessFileLineNumbers "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\template_updateDrug.sqf",
+        _updateDrugTemplate,
         _DrugArray select CT_OFF_DRUG_CLASSNAME,
         format ["%1Drug_%2", VARPREFIX, (_DrugArray select CT_OFF_DRUG_CLASSNAME)],
         _DrugArray select CT_OFF_DRUG_TRANSITIONPERTICK,
@@ -184,10 +185,23 @@ _OutArray = [];
     ];
     _ThisArray set [OFF_DRUG_GETVAL, compile _tmpFnc];
     //ENDREGION
-    //ToDo: Implement BlackOut function
+    //REGION Check drug blackout conditions
+    _tmpFnc = str formatText [
+        _updateDrugTemplate,
+        _DrugArray select CT_OFF_DRUG_CLASSNAME,
+        format ["%1Drug_%2", VARPREFIX, (_DrugArray select CT_OFF_DRUG_CLASSNAME)],
+        format[
+            _DrugArray select CT_OFF_DRUG_BLACKOUT select CT_OFF_DRUG_BLACKOUT_CONDITION,
+            "_unit",
+            "_currentValue",
+            _DrugArray select CT_OFF_DRUG_MAXVALUE
+        ],
+        _DrugArray select CT_OFF_DRUG_BLACKOUT select CT_OFF_DRUG_BLACKOUT_STAGE
+    ];
+    //ENDREGION
 	//ToDo: Implement item consume function
 } forEach _InArray;
 
-RETURN(_OutArray)
+RETURN([_OutArray, []])
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

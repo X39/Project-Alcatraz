@@ -24,7 +24,7 @@
 		{
 			_state = _tmpState;
 		};
-	} count X39_XMed_var_Drug_Blackout;
+	} count X39_XMed_var_BlackoutConditions;
 	
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
 
