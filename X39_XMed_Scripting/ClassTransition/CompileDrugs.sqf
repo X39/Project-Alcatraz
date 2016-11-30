@@ -7,7 +7,7 @@
  *      Generates required functions automatically
  * 
  * Arguments:
- *      Linked Drug array modified by FNC(CT_LinkDrugs)
+ *      Linked Drug array modified by X39_XMed_fnc_CT_LinkDrugs
  * 
  * Return:
  *      -/-
@@ -57,8 +57,7 @@ _OutArray = [];
         ];
         _tmpFnc = _tmpFnc + "{_x ppEffectEnable true; false} count _tmp;";
         _tmpFnc = _tmpFnc + format[
-            "(%1 select %2 select %3) set [%4, _tmp];",
-            STR(GVAR_CONTENT),
+            "(X39_XMed_var_XMedSysContent_DRUGS select %1 select %2) set [%3, _tmp];",
             _forEachIndex,
             OFF_DRUG_LOCAL,
             OFF_DRUG_LOCAL_VISIONEFFECT
@@ -73,8 +72,7 @@ _OutArray = [];
         ];
         _tmpFnc = _tmpFnc + "{_x ppEffectEnable true; false} count _tmp;";
         _tmpFnc = _tmpFnc + format[
-            "(%1 select %2 select %3) set [%4, _tmp];",
-            STR(GVAR_CONTENT),
+            "(X39_XMed_var_XMedSysContent_DRUGS select %1 select %2) set [%3, _tmp];",
             _forEachIndex,
             OFF_DRUG_LOCAL,
             OFF_DRUG_LOCAL_COLOREFFECT
@@ -92,8 +90,7 @@ _OutArray = [];
     if (_DrugArray select CT_OFF_DRUG_VISION != 1) then
     {
         _tmpFnc = _tmpFnc + format[
-            "_tmp = %1 select %2 select %3 select %4;",
-            STR(GVAR_CONTENT),
+            "_tmp = X39_XMed_var_XMedSysContent_DRUGS select %1 select %2 select %3;",
             _forEachIndex,
             OFF_DRUG_LOCAL,
             OFF_DRUG_LOCAL_VISIONEFFECT
@@ -103,8 +100,7 @@ _OutArray = [];
     if (_DrugArray select CT_OFF_DRUG_COLOR != 1) then
     {
         _tmpFnc = _tmpFnc + format[
-            "_tmp = %1 select %2 select %3 select %4;",
-            STR(GVAR_CONTENT),
+            "_tmp = X39_XMed_var_XMedSysContent_DRUGS select %1 select %2 select %3;",
             _forEachIndex,
             OFF_DRUG_LOCAL,
             OFF_DRUG_LOCAL_COLOREFFECT
@@ -166,7 +162,7 @@ _OutArray = [];
             "_unit getVariable [%1Drug_%2, _value, true]",
             VARPREFIX,
             (_DrugArray select CT_OFF_DRUG_CLASSNAME)
-        ];
+        ]
     ];
     _ThisArray set [OFF_DRUG_ADDVAL, compile _tmpFnc];
     //ENDREGION

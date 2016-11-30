@@ -21,7 +21,7 @@
 
 
 params [
-	["_unit", objNull, [objNull]],
+	["_unit", objNull, [objNull]]
 ];
 if (isNull _unit) then
 {

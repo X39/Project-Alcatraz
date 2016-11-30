@@ -40,5 +40,5 @@ if (_unit isKindOf "CAManBase") then
     ];
 };
 //ENDREGION
-RETURN(UVAR(_unit, BOS_STATE) == 0)
+RETURN((_unit getVariable "X39_XMed_var_BOS_STATE") == 0)
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

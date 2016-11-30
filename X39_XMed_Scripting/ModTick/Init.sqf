@@ -22,12 +22,12 @@ _tmp = [];
 {
     _tmp pushBack 0;
     false
-} count GVAR(Ticks);
-SETUVAR3(_unit, Tick_Properties, _tmp);
+} count X39_XMed_var_Ticks;
+_unit setVariable ["X39_XMed_var_Tick_Properties", _tmp];
 
 
 _var = [_unit] call BIS_fnc_objectVar;
-_tmp = addMissionEventHandler ["EachFrame", format["[%1] call %2", _var, FNCS(MT_DoTick)]];
-SETUVAR3(_unit, _varName, _tmp);
+_tmp = addMissionEventHandler ["EachFrame", format["[%1] call %2", _var, "X39_XMed_fnc_MT_DoTick"]];
+_unit setVariable [format["X39_XMed_var_%1", _varName], _tmp];
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

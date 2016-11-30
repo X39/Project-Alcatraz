@@ -6,7 +6,7 @@
  *      Links together passed Drug array (content of passed array will be modified!)
  * 
  * Arguments:
- *      Drugs array created by FNC(CT_MakeArray)
+ *      Drugs array created by X39_XMed_fnc_CT_MakeArray
  * 
  * Return:
  *      -/-
@@ -100,7 +100,7 @@ while {_whileIndex < count _ClassesLinkageArray} do
     //Search the affected drug and place its ref in _tmpAffectsArray
     {
         _index = _ClassesLinkageArray2 select 0 find (_x select 0);
-        if (_index != -1)
+        if (_index != -1) then
         {
             _tmpAffectsArray pushBack [_ClassesLinkageArray select _index, _x select 1];
         }

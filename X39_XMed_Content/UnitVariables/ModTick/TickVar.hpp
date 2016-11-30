@@ -7,7 +7,7 @@ class Tick_Content
     isLive = true;
     class Events
     {
-        init = FNCS(MT_Init);
-        uninit = FNCS(MT_Uninit);
+        init = "X39_XMed_fnc_MT_Init";
+        uninit = "X39_XMed_fnc_MT_Uninit";
     };
 };

@@ -22,8 +22,8 @@ removeMissionEventHandler ["EachFrame", _unit getVariable _varName];
 _var = [_unit] call BIS_fnc_objectVar;
 missionNamespace setVariable [_var, nil];
 
-SETUVAR3(_unit, Tick_TimeoutCount, nil);
-SETUVAR3(_unit, Tick_Properties, nil);
-SETUVAR3(_unit, _varName, nil);
+_unit setVariable ["X39_XMed_var_Tick_TimeoutCount", nil];
+_unit setVariable ["X39_XMed_var_Tick_Properties", nil];
+_unit setVariable [format["X39_XMed_var_%1", _varName], nil];
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

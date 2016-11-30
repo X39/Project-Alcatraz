@@ -73,7 +73,7 @@ if (!local _unit) then
 };
 switch (_state) do
 {
-    case -1: case 0: case 3: case 2: {
+    case -1; case 0; case 3; case 2: {
         if (!isNil "_stageArg") then
         {
             throw [
@@ -98,57 +98,57 @@ switch (_state) do
 };
 //ENDREGION
 
-_currentState = UVAR(_unit, BOS_STATE);
+_currentState = _unit getVariable "X39_XMed_var_BOS_STATE";
 
 switch (_state) do
 {
     case -1: {
-        [_text] call fnc(BOS_ChangeDisplayText);
+        [_text] call X39_XMed_fnc_BOS_ChangeDisplayText;
         RETURN(true);
     };
     case 0: {
-        if (_currentState > 1 && {!_override || ([_unit] call FNC(BOS_CheckConditions))}) then
+        if (_currentState > 1 && {!_override || ([_unit] call X39_XMed_fnc_BOS_CheckConditions)}) then
         {
             RETURN(false);
         }
         else
         {
-            SETUVAR4(_unit, BOS_STATE, _state, true);
-            [_unit] call FNC(BOS_WakeUnit);
+            _unit setVariable ["X39_XMed_var_BOS_STATE", _state, true];
+            [_unit] call X39_XMed_fnc_BOS_WakeUnit;
             RETURN(true);
         };
     };
     case 1: {
-        if (_currentState > 1 && {!_override || ([_unit] call FNC(BOS_CheckConditions))}) then
+        if (_currentState > 1 && {!_override || ([_unit] call X39_XMed_fnc_BOS_CheckConditions)}) then
         {
             RETURN(false);
         }
         else
         {
             private ["_tmpArr"];
-            SETUVAR4(_unit, BOS_STATE, _state, true);
+            _unit setVariable ["X39_XMed_var_BOS_STATE", _state, true];
             
             _tmpArr = [time, _stageArg];
             _tmpArr set [BOS_OFF_TIMEMAX, _stageArg];
             
-            SETUVAR3(_unit, BOS_INFO, _tmpArr);
+            _unit setVariable ["X39_XMed_var_BOS_INFO", _tmpArr];
             
-            [_unit] call FNC(BOS_BlackOutUnit);
-            [_text] call FNC(BOS_ChangeDisplayText);
+            [_unit] call X39_XMed_fnc_BOS_BlackOutUnit;
+            [_text] call X39_XMed_fnc_BOS_ChangeDisplayText;
             
             RETURN(true);
         };
     };
     case 2: {
-        if (_currentState > 2 && {!_override || ([_unit] call FNC(BOS_CheckConditions))}) then
+        if (_currentState > 2 && {!_override || ([_unit] call X39_XMed_fnc_BOS_CheckConditions)}) then
         {
             RETURN(false);
         }
         else
         {
-            SETUVAR4(_unit, BOS_STATE, _state, true);
-            [_unit] call FNC(BOS_BlackOutUnit);
-            [_text] call FNC(BOS_ChangeDisplayText);
+            _unit setVariable ["X39_XMed_var_BOS_STATE", _state, true];
+            [_unit] call X39_XMed_fnc_BOS_BlackOutUnit;
+            [_text] call X39_XMed_fnc_BOS_ChangeDisplayText;
             
             RETURN(true);
         };

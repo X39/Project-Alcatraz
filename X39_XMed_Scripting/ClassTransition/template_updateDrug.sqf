@@ -26,11 +26,11 @@ _fnc_scriptName = "GenFunc_DrugUpdateTick_%1";
 
 params ["_unit"];
 private ["_currentValue", "_tmpValue"];
-_currentValue = _unit getVariable GVARS(%2);
+_currentValue = _unit getVariable "X39_XMed_var_%2";
 _currentValue = _currentValue + %3;
 
 %4
 
-SETUVAR3(_unit, GVARS(%2), _currentValue);
+_unit setVariable ["X39_XMed_var_%2", _currentValue];
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

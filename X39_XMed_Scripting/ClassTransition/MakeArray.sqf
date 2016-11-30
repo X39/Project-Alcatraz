@@ -18,8 +18,8 @@ private ["_ResultArray", "_ReadElements", "_tmp", "_functions"];
 _ResultArray = [];
 _functions = [];
 _ReadElements = [];
-_ReadElements = ([configFile >> "ExtensiveMedicalsystem"] call FNC(CT_ReadIntoArray));
-_tmp = ([missionConfigFile >> "ExtensiveMedicalsystem"] call FNC(CT_ReadIntoArray));
+_ReadElements = ([configFile >> "ExtensiveMedicalsystem"] call X39_XMed_fnc_CT_ReadIntoArray);
+_tmp = ([missionConfigFile >> "ExtensiveMedicalsystem"] call X39_XMed_fnc_CT_ReadIntoArray);
 for "_i" from 0 to ((count _tmp) - 1) do 
 {
     (_ReadElements select _i) append (_tmp select _i);
@@ -28,14 +28,14 @@ try
 {
     try
     {
-        (_ReadElements select 0) call FNC(CT_LinkDrugs);
+        (_ReadElements select 0) call X39_XMed_fnc_CT_LinkDrugs;
     }
     catch
     {
         EXIT(format["Exception thrown while linking drugs: %1" COMMA _exception]);
-    }
-	_ResultArray set[CT_OFF_DRUG, (_ReadElements select CT_OFF_DRUG) call FNC(CT_CompileDrugs)];
-	_ResultArray set[CT_OFF_UNITVARS, (_ReadElements select CT_OFF_UNITVARS) call FNC(CT_CompileUserVariables)];
+    };
+	_ResultArray set[CT_OFF_DRUG, (_ReadElements select CT_OFF_DRUG) call X39_XMed_fnc_CT_CompileDrugs];
+	_ResultArray set[CT_OFF_UNITVARS, (_ReadElements select CT_OFF_UNITVARS) call X39_XMed_fnc_CT_CompileUserVariables];
 	
 	RETURN(_ResultArray);
 }

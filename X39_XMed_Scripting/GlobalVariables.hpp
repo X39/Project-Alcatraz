@@ -1,1 +1,0 @@
-#define GVAR_CONTENT_DRUGS GVAR(XMedSysContent_DRUGS)

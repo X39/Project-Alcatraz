@@ -20,7 +20,7 @@ params ["_inArray"];
 private ["_ReturnArray"];
 _ReturnArray = [];
 {
-    _x set [CT_OFF_UNITVARS_CLASSNAME, format[GVARS(%1), _x select CT_OFF_UNITVARS_CLASSNAME]];
+    _x set [CT_OFF_UNITVARS_CLASSNAME, format["X39_XMed_var_%1", _x select CT_OFF_UNITVARS_CLASSNAME]];
     if (!((_x select CT_OFF_UNITVARS_ISLIVE) || (_x select CT_OFF_UNITVARS_LOCAL))) then
     {
         (_ReturnArray select 1) pushBack _x;

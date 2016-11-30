@@ -23,12 +23,12 @@
 
 private["_tmp"];
 
-_tmp = [] call FNC(CT_MakeArray);
-GVAR(Drug_Blackout) = _tmp select CT_OFF_DRUG select OFF_DRUG_BLACKOUT_CONDITION;
-GVAR(UnitVariables) = _tmp select CT_OFF_UNITVARS;
+_tmp = [] call X39_XMed_fnc_CT_MakeArray;
+X39_XMed_var_Drug_Blackout = _tmp select CT_OFF_DRUG select OFF_DRUG_BLACKOUT_CONDITION;
+X39_XMed_var_UnitVariables = _tmp select CT_OFF_UNITVARS;
 
 //[<FUNCTIONNAME:STRING>, <TIMEOUT:SCALAR>]
-GVAR(Ticks) = [];
-GVAR(Ticks) pushBack [FNCS(MT_PublishUserVariables), 4];
+X39_XMed_var_Ticks = [];
+X39_XMed_var_Ticks pushBack ["X39_XMed_fnc_MT_PublishUserVariables", 4];
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
