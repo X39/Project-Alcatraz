@@ -26,17 +26,9 @@ for "_i" from 0 to ((count _tmp) - 1) do
 };
 try
 {
-    try
-    {
-        (_ReadElements select 0) call X39_XMed_fnc_CT_LinkDrugs;
-    }
-    catch
-    {
-        EXIT(format["Exception thrown while linking drugs: %1" COMMA _exception]);
-    };
+   (_ReadElements select 0) call X39_XMed_fnc_CT_LinkDrugs;
     _tmp = (_ReadElements select CT_OFF_DRUG) call X39_XMed_fnc_CT_CompileDrugs;
 	_ResultArray set[CT_OFF_DRUG, _tmp select 0];
-	_ResultArray set[CT_OFF_BLACKOUT_CONDITION, _tmp select 1];
 	_ResultArray set[CT_OFF_UNITVARS, (_ReadElements select CT_OFF_UNITVARS) call X39_XMed_fnc_CT_CompileUserVariables];
 	
 	RETURN(_ResultArray);

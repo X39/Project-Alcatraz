@@ -9,9 +9,7 @@
  *      https://community.bistudio.com/wiki/Initialization_Order
  * 
  * Arguments:
- *      [
- *          <UNIT:OBJECT>
- *      ]
+ *      [<UNIT:OBJECT>, <FPSCOMPENSATION:SCALAR>]
  * 
  * Return:
  *      -/-
@@ -22,12 +20,11 @@ _fnc_scriptName = "GenFunc_DrugUpdateTick_%1";
 #define DISABLERETURN
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\CTArrayOffsets.hpp"
 
-params ["_unit"];
+params ["_unit", "_compensation"];
 private ["_currentValue", "_tmpValue"];
 _currentValue = _unit getVariable "X39_XMed_var_%2";
-_currentValue = _currentValue + %3;
+_currentValue = _currentValue + (%3 * _compensation);
 
 %4
 

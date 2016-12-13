@@ -3,7 +3,7 @@
  *      X39
  * 
  * Description:
- *      Takes care of publishing the variables to other client instances.
+ *      Calls drug update functions
  * 
  * Arguments:
  *      [<UNIT:OBJECT>, <FPSCOMPENSATION:SCALAR>]
@@ -15,6 +15,12 @@
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
 
-EXNOTIMPLEMENTED;
+#include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\DrugsOffset.hpp"
+
+params ["_unit", "_compensation"];
+private ["_checkFnc"];
+
+//Just call with state "AWAKE" as the BOS state wont change when conditions are blocking it.
+[_unit, 0] call X39_XMed_fnc_BOS_ChangeState;
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

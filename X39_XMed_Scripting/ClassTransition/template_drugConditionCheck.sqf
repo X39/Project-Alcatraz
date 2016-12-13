@@ -24,8 +24,7 @@ _fnc_scriptName = "GenFunc_DrugConditionCheck_%1";
 #include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\CTArrayOffsets.hpp"
 
 params ["_unit"];
-private ["_currentValue"];
-_currentValue = _unit getVariable "X39_XMed_var_%2";
+_currentValue = _unit getVariable "%2";
 if (%3) then
 {
     RETURN (%4);

@@ -18,7 +18,7 @@
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
 params [
-	["_unit", objNull, [objNull]],
+	["_unit", objNull, [objNull]]
 ];
 //REGION Argument Validation
 if (isNull _unit) then

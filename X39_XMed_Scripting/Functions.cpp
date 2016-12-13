@@ -16,6 +16,8 @@ class ModTick
 	class MT_DoTick                 { file = "x\x39\ExtensiveMedicalsystem\scripting\ModTick\DoTick.sqf"; };
     
 	class MT_PublishUserVariables   { file = "x\x39\ExtensiveMedicalsystem\scripting\ModTick\tick_PublishUserVariables.sqf"; };
+	class MT_UpdateDrugs			{ file = "x\x39\ExtensiveMedicalsystem\scripting\ModTick\tick_UpdateDrugs.sqf"; };
+	class MT_Blackout				{ file = "x\x39\ExtensiveMedicalsystem\scripting\ModTick\tick_Blackout.sqf"; };
 };
 class ClassTransition
 {

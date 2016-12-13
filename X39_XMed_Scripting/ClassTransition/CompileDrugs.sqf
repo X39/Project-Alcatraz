@@ -17,9 +17,15 @@
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
 
+#include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\DrugsOffset.hpp"
+
+#define VARPREFIX "X39_XMed_var_"
+
 params ["_InArray"];
-private ["_OutArray", "_updateDrugTemplate"];
+private ["_OutArray", "_updateDrugTemplate", "_checkBlackoutConditionTemplate"];
 _updateDrugTemplate = preProcessFileLineNumbers "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\template_updateDrug.sqf";
+_checkBlackoutConditionTemplate = preProcessFileLineNumbers "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\template_drugConditionCheck.sqf";
+
 _OutArray = [];
 {
     private ["_tmp"];
@@ -130,10 +136,11 @@ _OutArray = [];
             ]
         ];
         _tmpFnc = _tmpFnc + format [
-            '_currentValue = _currentValue %1 (%2);',
+            '_currentValue = _currentValue %1 ((%2) * _compensation);',
             _x select 1 select CT_OFF_DRUG_AFFECTS_CALCULATIONTYPE,
             format [
                 _x select 1 select CT_OFF_DRUG_AFFECTS_VALUE,
+                "_unit",
                 "_currentValue",
                 "_tmpValue"
             ]
@@ -187,7 +194,7 @@ _OutArray = [];
     //ENDREGION
     //REGION Check drug blackout conditions
     _tmpFnc = str formatText [
-        _updateDrugTemplate,
+        _checkBlackoutConditionTemplate,
         _DrugArray select CT_OFF_DRUG_CLASSNAME,
         format ["%1Drug_%2", VARPREFIX, (_DrugArray select CT_OFF_DRUG_CLASSNAME)],
         format[
@@ -198,10 +205,11 @@ _OutArray = [];
         ],
         _DrugArray select CT_OFF_DRUG_BLACKOUT select CT_OFF_DRUG_BLACKOUT_STAGE
     ];
-    //ENDREGION
+     _ThisArray set [OFF_DRUG_BLACKOUT_CONDITION, compile _tmpFnc];
+   //ENDREGION
 	//ToDo: Implement item consume function
 } forEach _InArray;
 
-RETURN([_OutArray, []])
+RETURN(_OutArray)
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

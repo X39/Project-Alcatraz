@@ -18,6 +18,7 @@
 #define EXNOTIMPLEMENTED throw [EX_ID_GENERIC_NOTIMPLEMENTED, "Not Implemented", STACKTRACE, nil]
 
 #define PPEffectOffset 56
+#define === isEqualTo
 
 #ifdef DEBUG
     //If in debug mode, enable tracing & printing call arguments
@@ -25,4 +26,3 @@
     #define DOCARGS
 	#define DOCALLTRACE
 #endif
-#include "x\x39\ExtensiveMedicalsystem\scripting\GlobalVariables.hpp"

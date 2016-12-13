@@ -11,10 +11,16 @@
  * Return:
  *      -/-
  */
+#define VARIABLENAMESPACE uiNamespace
+#define DISABLERETURN
 #include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
 #include "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\variables.hpp"
 
-EXNOTIMPLEMENTED;
+if(!isNil "XMS_BlackOutScreen_UI") then
+{
+    XMS_BlackOutScreen_UI closeDisplay XMS_BlackOutScreen_UI;
+    terminate XMS_BlackOutScreen_LOOP;
+};
 
 #include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"

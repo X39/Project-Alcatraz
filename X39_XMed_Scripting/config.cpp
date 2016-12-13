@@ -1,5 +1,17 @@
 #include "x\x39\ExtensiveMedicalsystem\scripting\default.hpp"
-
+class CfgPatches
+{
+	class X39_XMed_Scripting
+	{
+         units[] = {};
+         weapons[] = {};
+         requiredVersion = 1.64;
+         requiredAddons[] = {};
+         author = "X39";
+         mail = "x39@x39.io";
+		 url = "https://x39.io/projects/eXtensiveMedicalSystem";
+	};
+};
 class CfgFunctions
 {
     class X39_XMed

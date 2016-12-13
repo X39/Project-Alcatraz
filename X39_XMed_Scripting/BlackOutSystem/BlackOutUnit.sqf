@@ -51,7 +51,7 @@ if (!local _unit) then
     ];
 };
 
-if (hasInterface) then
+if (hasInterface && {_unit == player}) then
 {
 	private ["_dlgResult"];
 	_dlgResult = createDialog "XMS_BlackOutScreen";
