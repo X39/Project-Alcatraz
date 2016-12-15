@@ -17,9 +17,9 @@
  *      -/-
  */
 #define DISABLERETURN
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\CTArrayOffsets.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\ClassTransition\CTArrayOffsets.hpp"
 
 private["_tmp"];
 
@@ -37,4 +37,4 @@ X39_XMed_var_Ticks = [];
 X39_XMed_var_Ticks pushBack ["X39_XMed_fnc_MT_PublishUserVariables", 4];
 X39_XMed_var_Ticks pushBack ["X39_XMed_fnc_MT_UpdateDrugs", 4];
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

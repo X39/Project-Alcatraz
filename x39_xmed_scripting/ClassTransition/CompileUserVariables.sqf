@@ -13,8 +13,8 @@
  * Throws:
  *      Will throw an exception in case of any error
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
 params ["_inArray"];
 private ["_ReturnArray"];
@@ -31,4 +31,4 @@ _ReturnArray = [];
 _ReturnArray = [_inArray, _ReturnArray];
 RETURN(_ReturnArray);
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

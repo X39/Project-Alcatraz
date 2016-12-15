@@ -14,17 +14,17 @@
  * Throws:
  *      Will throw an exception in case of any error
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\DrugsOffset.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\ClassTransition\DrugsOffset.hpp"
 
 #define VARPREFIX "X39_XMed_var_"
 
 params ["_InArray"];
 private ["_OutArray", "_updateDrugTemplate", "_checkBlackoutConditionTemplate"];
-_updateDrugTemplate = preProcessFileLineNumbers "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\template_updateDrug.sqf";
-_checkBlackoutConditionTemplate = preProcessFileLineNumbers "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\template_drugConditionCheck.sqf";
+_updateDrugTemplate = preProcessFileLineNumbers "x\x39\extensivemedicalsystem\scripting\ClassTransition\template_updateDrug.sqf";
+_checkBlackoutConditionTemplate = preProcessFileLineNumbers "x\x39\extensivemedicalsystem\scripting\ClassTransition\template_drugConditionCheck.sqf";
 
 _OutArray = [];
 {
@@ -212,4 +212,4 @@ _OutArray = [];
 
 RETURN(_OutArray)
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

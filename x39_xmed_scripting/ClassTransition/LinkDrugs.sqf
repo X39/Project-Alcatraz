@@ -15,8 +15,8 @@
  *      EX_ID_DRUG_LINK_UNKNOWN     thrown if the drug trys to affect an unknown drug
  *      EX_ID_DRUG_LINK_MAXATTEMPT  thrown when drug affect linking reached max retries (10)
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
 params ["_DrugsArray"];
 private [
@@ -135,4 +135,4 @@ while {_whileIndex < count _ClassesLinkageArray} do
     _DrugsArray set [_forEachIndex, _x];
 } foreach _ClassesLinkageArray2 select 1;
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

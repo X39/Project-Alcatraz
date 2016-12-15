@@ -47,13 +47,13 @@ The file header should contain the basic information about what this file is use
  *      Only needed if function actually does throw something
  *      If you do throw, list each exception case that can occur here!
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
 //CodeGoesHere
 //Return stuff using the RETURN(<yourVariable>) macro from anywhere
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"
 
 ```
 ##Exceptions (Throw arguments)

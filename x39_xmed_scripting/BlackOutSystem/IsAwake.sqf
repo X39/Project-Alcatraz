@@ -15,8 +15,8 @@
  *      EX_ID_GENERIC_INVALID_ARG       if inArg0 is NULL object
  *      EX_ID_GENERIC_INVALID_ARG       if inArg0 is not having CAManBase as parent (--> vehicle)
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 params [
 	["_unit", objNull, [objNull]]
 ];
@@ -41,4 +41,4 @@ if (_unit isKindOf "CAManBase") then
 };
 //ENDREGION
 RETURN((_unit getVariable "X39_XMed_var_BOS_STATE") == 0)
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

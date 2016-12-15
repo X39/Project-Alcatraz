@@ -12,8 +12,8 @@
  *      -/-
  */
 #define DISABLERETURN
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
 params ["_unit"];
 private ["_tickCount", "_index", "_tickTimeout", "_properties"];
@@ -46,4 +46,4 @@ if (_tickTimeout <= 0) then
 };
 _unit setVariable ["X39_XMed_var_Tick_TimeoutCount", _tickTimeout - 1];
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

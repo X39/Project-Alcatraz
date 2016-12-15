@@ -33,7 +33,7 @@ class XMS_BlackOutScreen
 		};
 		class ImgBack: RscPicture
 		{
-			text = "x\x39\ExtensiveMedicalsystem\scripting\res\BlackOutScreen_TransparencyCircle.paa";
+			text = "x\x39\extensivemedicalsystem\scripting\res\BlackOutScreen_TransparencyCircle.paa";
 			colorBackground[] = {0, 0, 0, 1};
 			x = "SafeZoneX + (0 / 1920) * SafeZoneW";
 			y = "SafeZoneY + (165 / 1080) * SafeZoneH";

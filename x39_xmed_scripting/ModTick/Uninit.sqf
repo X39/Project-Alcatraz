@@ -12,8 +12,8 @@
  *      -/-
  */
 #define DISABLERETURN
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
 params ["_varName", "_unit"];
 private ["_var"];
@@ -26,4 +26,4 @@ _unit setVariable ["X39_XMed_var_Tick_TimeoutCount", nil];
 _unit setVariable ["X39_XMed_var_Tick_Properties", nil];
 _unit setVariable [format["X39_XMed_var_%1", _varName], nil];
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

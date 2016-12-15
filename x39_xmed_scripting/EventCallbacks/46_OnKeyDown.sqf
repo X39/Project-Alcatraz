@@ -14,8 +14,8 @@
  * Return:
  *      <BOOL>          Flag determining if key got already handled by this or not.
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
 params["_control", "_digcode", "_shiftFlag", "_ctrlFlag", "_altFlag"];
 
@@ -30,4 +30,4 @@ with uiNamespace do
 
 RETURN(false);
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

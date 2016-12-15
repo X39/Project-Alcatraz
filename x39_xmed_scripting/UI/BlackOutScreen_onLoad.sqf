@@ -1,6 +1,6 @@
 #define DISABLERETURN
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 #include "BlackOutScreen_IDs.hpp"
 
 params ["_ctrl"];
@@ -36,4 +36,4 @@ uiNamespace setVariable ["XMS_BlackOutScreen_LOOP", _ctrl spawn {
 }];
 
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

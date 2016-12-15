@@ -15,8 +15,8 @@
  *      -/-
  */
 #define DISABLERETURN
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
 
 params [
@@ -27,4 +27,4 @@ params [
 (findDisplay 46) displayRemoveEventHandler["keyDown", _unit getVariable["X39_XMed_var_CB_46_OnKeyDown"]];
 
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

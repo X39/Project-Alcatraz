@@ -19,9 +19,9 @@
 private "_fnc_scriptName";
 _fnc_scriptName = "GenFunc_DrugConditionCheck_%1";
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\CTArrayOffsets.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\ClassTransition\CTArrayOffsets.hpp"
 
 params ["_unit"];
 _currentValue = _unit getVariable "%2";
@@ -34,4 +34,4 @@ else
     RETURN(0);
 };
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

@@ -11,9 +11,9 @@
  *      <SCALAR> BlackOutState the unit currently is in, see ChangeState.sqf for the states.
  */
 #define DISABLERETURN
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
 
 	params ["_unit"];
 	private ["_state", "_tmpState"];
@@ -26,6 +26,6 @@
 		};
 	} count X39_XMed_var_BlackoutConditions;
 	
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"
 
 _state

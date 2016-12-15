@@ -33,9 +33,9 @@
  *                                      (message will contain further details)
  *      EX_ID_GENERIC_INVALID_LOCALITY  in case inArg0 is not local to current computer
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
 params [
 	["_unit", objNull, [objNull]],
 	["_state", 0, [0]],
@@ -159,4 +159,4 @@ switch (_state) do
         throw EXNOTIMPLEMENTED;
     };
 };
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

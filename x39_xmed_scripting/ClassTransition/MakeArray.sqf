@@ -11,8 +11,8 @@
  * Return:
  *      Compiled & linked content array
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
 private ["_ResultArray", "_ReadElements", "_tmp", "_functions"];
 _ResultArray = [];
@@ -38,4 +38,4 @@ catch
 	EXIT(format["Exception thrown while compiling: %1" COMMA _exception]);
 };
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

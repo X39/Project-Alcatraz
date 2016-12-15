@@ -1,5 +1,5 @@
-#include "x\x39\ExtensiveMedicalsystem\scripting\default.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\exceptionIds.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\default.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\exceptionIds.hpp"
 #define VARPREFIX X39_XMed_var_
 #define FNCPREFIX X39_XMed_fnc_
 #define COMMA ,

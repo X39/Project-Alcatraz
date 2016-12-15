@@ -15,9 +15,9 @@
  *      EX_ID_GENERIC_INVALID_ARG       if inArg0 is not having CAManBase as parent (--> vehicle)
  *      EX_ID_GENERIC_INVALID_LOCALITY  in case inArg0 is not local to current computer
  */
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\BlackOutSystem\infoArrayOffsets.hpp"
 
 
 params [
@@ -60,4 +60,4 @@ else
 {
 };
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"

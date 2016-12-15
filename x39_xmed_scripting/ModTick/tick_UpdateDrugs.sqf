@@ -12,10 +12,10 @@
  *      -/-
  */
 #define DISABLERETURN
-#include "x\x39\ExtensiveMedicalsystem\scripting\defaultSQF.hpp"
-#include "x\x39\ExtensiveMedicalsystem\scripting\header.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\ClassTransition\DrugsOffset.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\ClassTransition\DrugsOffset.hpp"
 
 params ["_unit", "_compensation"];
 private ["_tickFnc"];
@@ -26,4 +26,4 @@ private ["_tickFnc"];
     false
 } count X39_XMed_var_Drug;
 
-#include "x\x39\ExtensiveMedicalsystem\scripting\footer.hpp"
+#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"
