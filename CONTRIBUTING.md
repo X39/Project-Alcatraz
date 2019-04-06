@@ -47,13 +47,13 @@ The file header should contain the basic information about what this file is use
  *      Only needed if function actually does throw something
  *      If you do throw, list each exception case that can occur here!
  */
-#include "\x\x39\extensivemedicalsystem\scripting\defaultSQF.hpp"
-#include "\x\x39\extensivemedicalsystem\scripting\header.hpp"
+#include "\x\xms\extensivemedicalsystem\scripting\defaultSQF.hpp"
+#include "\x\xms\extensivemedicalsystem\scripting\header.hpp"
 
 //CodeGoesHere
 //Return stuff using the RETURN(<yourVariable>) macro from anywhere
 
-#include "\x\x39\extensivemedicalsystem\scripting\footer.hpp"
+#include "\x\xms\extensivemedicalsystem\scripting\footer.hpp"
 
 ```
 ##Exceptions (Throw arguments)
@@ -62,7 +62,7 @@ Functions which throw always need to throw following kind of array:
 Please note that `STACKTRACE` is a define you can use if you included the header.hpp correctly
 
 further details:
-* `<ID>` ID which is registered in `\X39_XMed_Scripting\exceptionIds.hpp`
+* `<ID>` ID which is registered in `\xms_XMed_Scripting\exceptionIds.hpp`
 * `<Message>` Message this exception contains
 * `<Content>` either nil or further content (everything is allowed in here)
 
