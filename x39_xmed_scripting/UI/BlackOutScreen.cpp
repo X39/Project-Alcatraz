@@ -1,5 +1,5 @@
 #include "BlackOutScreen_IDs.hpp"
-class X39_XMS_BlackOutScreen
+class XMS_BlackOutScreen
 {
 	idd = -1;
 	onLoad = "_this call X39_XMed_fnc_BlackOutScreen_onLoad;";
