@@ -1,5 +1,5 @@
-class BOS_STATE
+class BlackOutSystem_State : Base
 {
-    Description = "Represents the black out state of this unit";
+    Description = "Represents the current blackout state of the unit.";
     Default = "0";
 };

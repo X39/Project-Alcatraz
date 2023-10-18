@@ -1,5 +1,5 @@
-#define STR(EXT) #EXT
-#define FNC(EXT) xms_XMed_fnc_##EXT
-#define GVAR(EXT) xms_XMed_var_##EXT
-#define FNCS(EXT) STR(FNC(EXT))
-#define GVARS(EXT) STR(GVAR(EXT))
+#define true 1
+#define false 0
+#define inherit 0
+#define public 1
+#define private 0

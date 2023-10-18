@@ -1,0 +1,21 @@
+name = "Extensive Medical System"
+prefix = "extensivemedicalsystem"
+mainprefix = "z"
+
+[files]
+include = [
+    "mod.cpp",
+    "meta.cpp",
+    "LICENSE.MD",
+]
+
+[properties]
+author = "X39"
+url = "https://github.com/X39/Project-Alcatraz"
+
+[version]
+major = 0
+minor = 1
+patch = 0
+build = 0
+

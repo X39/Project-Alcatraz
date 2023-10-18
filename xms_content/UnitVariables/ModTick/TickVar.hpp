@@ -1,5 +1,5 @@
-//class name will be appended to the variable prefix
-class Tick_Content
+// class name will be appended to the variable prefix
+class Tick_Content : Base
 {
     Description = "Contains critical informations about where this tick is set inside";
     Default = "-1";

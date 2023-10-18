@@ -1,2 +1,1 @@
-#define DEBUG
-#define COMMA ,
+#include "exception.hpp"
