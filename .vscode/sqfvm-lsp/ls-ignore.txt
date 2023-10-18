@@ -18,5 +18,4 @@
 .github
 .git
 .hemtt
-xms_content
-xms_scripting-old
+--outdated--

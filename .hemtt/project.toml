@@ -1,16 +1,17 @@
 name = "Extensive Medical System"
-prefix = "extensivemedicalsystem"
+prefix = "xms"
 mainprefix = "z"
+author = "X39"
 
 [files]
 include = [
     "mod.cpp",
     "meta.cpp",
     "LICENSE.MD",
+    "logo.paa",
 ]
 
 [properties]
-author = "X39"
 url = "https://github.com/X39/Project-Alcatraz"
 
 [version]
@@ -19,3 +20,5 @@ minor = 1
 patch = 0
 build = 0
 
+[asc]
+enabled = true

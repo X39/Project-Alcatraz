@@ -1,2 +1,0 @@
-#define BOS_OFF_TIME 0
-#define BOS_OFF_TIMEMAX 1
