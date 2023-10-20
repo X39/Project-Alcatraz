@@ -17,7 +17,7 @@ class CfgMods
     {
         dir = "@xms";
         name = "Extensive Medical System";
-        picture = "z\xms\resources\logo.paa";
+        picture = "z\xms\resources\logo_64px.paa";
         hidePicture = "true";
         hideName = "true";
         actionName = "Website";

@@ -6,9 +6,9 @@ author = "X39"
 [files]
 include = [
     "mod.cpp",
-    "meta.cpp",
     "LICENSE.MD",
-    "logo.paa",
+    "logo_64px.paa",
+    "logo_1024px.paa",
 ]
 
 [properties]
@@ -30,5 +30,4 @@ workshop = [
     "450814997",  # CBA_A3
 ]
 parameters = [
-    "C:\\Users\\marco.silipo\\Documents\\Arma 3 - Other Profiles\\X39\\missions\\MOD_Test.Stratis\\mission.sqm"
 ]
