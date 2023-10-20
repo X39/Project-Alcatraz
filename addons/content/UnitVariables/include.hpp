@@ -1,4 +1,9 @@
 #include "base.hpp"
+
+#include "CardiovascularSystem/CardiovascularSystem_BloodPresure.hpp"
+#include "CardiovascularSystem/CardiovascularSystem_BloodValue.hpp"
+#include "CardiovascularSystem/CardiovascularSystem_HeartRate.hpp"
+
 #include "Wounding/Wound_Head.hpp"
 #include "Wounding/Wound_Body.hpp"
 #include "Wounding/Wound_LeftFoot.hpp"
@@ -14,4 +19,3 @@
 #include "Wounding/Wound_RightUpperArm.hpp"
 #include "Wounding/Wound_RightUpperLeg.hpp"
 #include "Wounding/Wound_Rips.hpp"
-

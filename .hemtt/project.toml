@@ -21,4 +21,14 @@ patch = 0
 build = 0
 
 [asc]
-enabled = true
+enabled = false
+
+[hemtt.launch]
+workshop = [
+    "1585582292", # Arma Debug Engine
+    "1645973522", # Intercept Minimal Dev
+    "450814997",  # CBA_A3
+]
+parameters = [
+    "C:\\Users\\marco.silipo\\Documents\\Arma 3 - Other Profiles\\X39\\missions\\MOD_Test.Stratis\\mission.sqm"
+]

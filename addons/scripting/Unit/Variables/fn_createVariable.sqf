@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -15,8 +17,6 @@
  * Return:
  *      <HASHMAP> // The unit variable <HASHMAP> created from the config <CONFIG>.
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
 
 params [
     ["_config", configNull, [configNull]]
@@ -30,13 +30,16 @@ if (isNull _config) exitWith {
     ];
 };
 
+private _synchronization = getNumber (_config >> "synchronization");
 private _hashMap = createHashMapFromArray [
     ["name", format["XMS_UnitVariable_var_%1", configName _config]],
+    ["declaredName", configName _config],
 
     ["description", getText (_config >> "description")],
-    ["default", (_config >> "default") call BIS_fnc_getCfgData],
-    ["isLocal", getText (_config >> "isLocal") != 0],
-    ["isLive", getText (_config >> "isLive") != 0],
+    ["default", call compile getText (_config >> "default")],
+    ["synchronization", _synchronization],
+    ["isLocal", _synchronization == -1],
+    ["isLive", _synchronization == 0],
     ["events", createHashMapFromArray [
         ["init", compileFinal getText (_config >> "events" >> "init")],
         ["uninit", compileFinal getText (_config >> "events" >> "uninit")],
@@ -45,6 +48,8 @@ private _hashMap = createHashMapFromArray [
         ["valueChange", compileFinal getText (_config >> "events" >> "valueChange")]
     ]]
 ];
+
+_hashMap
 
 #include "\z\xms\scripting\footer.hpp"
  

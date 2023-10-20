@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -14,13 +16,12 @@
  * Return:
  *      Always 0
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
 
-#define ASSIGN_IF_NIL(var, val) if (isNil #var) then { var = val; };
 
 // Internal
 ASSIGN_IF_NIL(XMS_Unit_HitDetection_var_LastHitPartResult, false);
+ASSIGN_IF_NIL(XMS_Unit_Variables_var_DelayedChanges, createHashMap);
+ASSIGN_IF_NIL(XMS_Unit_Variables_var_Cache, createHashMap);
 
 // Configurable
 ASSIGN_IF_NIL(XMS_Unit_HitDetection_var_PenetrationDamageThreshold, 0.1);

@@ -5,13 +5,12 @@
  *      xms
  * 
  * Description:
- *      Sets a unit variable to a given value and handles any events that may be triggered by the change.
+ *      Clears a unit variable from a unit.
  * 
  * Arguments:
  *      [
- *         <OBJECT>, // _unit - The unit to set the variable for.
- *         <STRING>, // _unitVariableName - The name of the unit variable to set.
- *         <ANY>     // _value - The value to set the variable to.
+ *         <OBJECT>, // _unit - The unit to clear the variable from.
+ *         <STRING>  // _unitVariableName - The name of the unit variable to clear.
  *      ]
  * 
  * Throws:
@@ -56,37 +55,20 @@ private _variableName = _unitVariable get "name";
 private _variableSynchronization = _unitVariable get "synchronization";
 
 // Abort if the variable did not change.
-private _currentValue = _unit getVariable _variableName;
+private _currentValue = _unit getVariable [_variableName, _unitVariable get "default"];
 if (_currentValue isEqualTo _value) exitWith { /* empty */ };
 
-// Trigger the init event.
-if isNil "_currentValue" then {
-    _currentValue = _unitVariable get "default";
-    private _cbInit = _unitVariable get "events" get "init";
-    if (_cbInit isNotEqualTo {}) then {
-        [_unit, _variableName, _currentValue, _value] call _cbInit;
-    };
-};
-
 // Trigger the value change event.
-private _cbValueChange = _unitVariable get "events" get "valueChange";
-if (_cbValueChange isNotEqualTo {}) then {
-    [_unit, _variableName, _currentValue, _value] call _cbValueChange;
+private _cbUninit = _unitVariable get "events" get "uninit";
+if (_cbUninit isNotEqualTo {}) then {
+    [_unit, _variableName, _currentValue, _value] call _cbUninit;
 };
 
 // Set the variable.
 if (_variableSynchronization < 0) then {
-    _unit setVariable [_variableName, _value, false];
+    _unit setVariable [_variableName, nil, false];
 } else {
-    if (_variableSynchronization > 0) then {
-        isNil {
-            _unit setVariable [_variableName, _value];
-            XMS_Unit_Variables_var_DelayedChanges set [_variableName, _variableSynchronization];
-            false
-        };
-    } else {
-        _unit setVariable [_variableName, _value, true];
-    };
+    _unit setVariable [_variableName, _value, true];
 };
 
 #include "\z\xms\scripting\footer.hpp"

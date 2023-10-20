@@ -3,5 +3,5 @@ class Tick_TimeoutCount : Base
 {
     Description = "Ticks before next processing will start";
     Default = "0";
-    Local = true;
+    synchronization = -1;
 };

@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -15,8 +17,6 @@
  * Return:
  *      -/-
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
 
 #define MainDisplay findDisplay 46
 

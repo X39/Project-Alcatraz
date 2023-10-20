@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -35,8 +37,7 @@
  * Return:
  *      <string> // The hit section of XMS.
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
+
 
 private _hitSection = nil;
 {
@@ -50,12 +51,12 @@ private _hitSection = nil;
     if (_x in ["rightarmroll", "rightshoulder"]) exitWith {_hitSection = "right-upper-arm";};
     if (_x in ["rightforearmroll", "rightforearm"]) exitWith {_hitSection = "right-lower-arm";};
     if (_x in ["righthand"]) exitWith {_hitSection = "right-hand";};
-    if (_x in ["lefttupleg", "lefttuplegroll", "lefttleg"]) exitWith {_hitSection = "left-upper-leg";};
-    if (_x in ["lefttlegroll"]) exitWith {_hitSection = "left-lower-leg";};
-    if (_x in ["lefttfoot", "leftttoebase"]) exitWith {_hitSection = "left-foot";};
-    if (_x in ["righttupleg", "righttuplegroll", "righttleg"]) exitWith {_hitSection = "right-upper-leg";};
-    if (_x in ["righttlegroll"]) exitWith {_hitSection = "right-lower-leg";};
-    if (_x in ["righttfoot", "rightttoebase"]) exitWith {_hitSection = "right-foot";};
+    if (_x in ["leftupleg", "leftuplegroll", "leftleg"]) exitWith {_hitSection = "left-upper-leg";};
+    if (_x in ["leftlegroll"]) exitWith {_hitSection = "left-lower-leg";};
+    if (_x in ["leftfoot", "lefttoebase"]) exitWith {_hitSection = "left-foot";};
+    if (_x in ["rightupleg", "rightuplegroll", "rightleg"]) exitWith {_hitSection = "right-upper-leg";};
+    if (_x in ["rightlegroll"]) exitWith {_hitSection = "right-lower-leg";};
+    if (_x in ["rightfoot", "righttoebase"]) exitWith {_hitSection = "right-foot";};
     #pragma sls enable VV-001 // Variable is not used
 } forEach _this;
 if (isNil "_hitSection") exitWith {

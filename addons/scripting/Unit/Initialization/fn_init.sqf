@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -21,8 +23,7 @@
  * Return:
  *      -/-
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
+
 
 
 params [
@@ -70,5 +71,12 @@ _unit setVariable [
 ];
 _unit setVariable ["XMS_Unit_Initialization_var_Initialized", true];
 _unit setVariable ["XMS_Unit_Initialization_var_InitializingChanges", false];
+
+// Initialize all unit variables
+{
+    private _name = _x get "name";
+    private _defaultValue = _x get "default";
+    [_unit, _name, _defaultValue] call XMS_Unit_Variables_fnc_SetVariable;
+} forEach ([] call XMS_Unit_Variables_fnc_GetAllVariables);
 
 #include "\z\xms\scripting\footer.hpp"

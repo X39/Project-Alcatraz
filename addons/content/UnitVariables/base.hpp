@@ -1,14 +1,10 @@
 //class name will be appended to the variable prefix
 class Base
 {
-    description = "";           // What does this variable do
+    description = "";           // What does this variable do (used for debuging).
     default = "0";              // Default Value, gets call compiled
-    isLocal = false;            // Sets if this variable is broadcasted or not
-    isLive = true;              // Sets if this variable is a "live" variable that gets propagated
-                                // instant on change or if it should only change
-                                // when the propagate tick runs over it (delayed change)
-                                // Live update itself is not automatically done
-                                // (use setVariable with true as third parameter instead of just two parameters)
+    synchronization = 0;        // Sets how fast this variable should be synchronized, where -1 is never (local)
+                                // and 0 is on change (live) and any value above is the time in seconds for debouncing.
     class Events                // Function names in missionNamespace are supposed to be placed in theese
     {
         init = "";              // Callen whenever the variable gets initialized on a new unit.

@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -17,8 +19,6 @@
  * Return:
  *      <HashMapObject> // The disposable.
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
 
 params [
     ["_code", {}, [{}]],

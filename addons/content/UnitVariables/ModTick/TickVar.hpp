@@ -3,8 +3,7 @@ class Tick_Content : Base
 {
     Description = "Contains critical informations about where this tick is set inside";
     Default = "-1";
-    Local = true;
-    isLive = true;
+    synchronization = -1;
     class Events
     {
         init = "xms_XMed_fnc_MT_Init";

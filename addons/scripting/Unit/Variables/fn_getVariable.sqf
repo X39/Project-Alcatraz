@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -8,7 +10,7 @@
  * Arguments:
  *      [
  *         <OBJECT>, // _unit - The unit to receive the variable from.
- *         <STRING>  // _unitVariable - The name of the unit variable to receive.
+ *         <STRING>  // _unitVariableName - The name of the unit variable to receive.
  *      ]
  * 
  * Throws:
@@ -16,17 +18,16 @@
  *        Thrown if the unit is not provided, is not an object or is null.
  *      - XMS_UNIT_VARIABLES_EXCEPTION_FAILED_TO_FIND_USER_VARIABLE
  *        Thrown if the unit variable could not be found.
+ *      - XMS_UNIT_VARIABLES_EXCEPTION_UNIT_NOT_INITIALIZED
+ *        Thrown if the unit is not initialized by the Extensive Medical System.
  * 
  * Return:
  *      -/-
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
 
 params [
     ["_unit", objNull, [objNull]],
-    ["_unitVariable", "", [""]],
-    ["_value", nil]
+    ["_unitVariableName", "", [""]]
 ];
 
 // Throw an exception if the unit is not provided.
@@ -38,25 +39,19 @@ if isNull _unit exitWith {
     ];
 };
 
-// Find the unit variable config.
-private _unitVariableConfig = missionConfigFile >> "ExtensiveMedicalSystem" >> "UnitVariables" >> _unitVariable;
-if isNull _unitVariableConfig then {
-    _unitVariableConfig = configFile >> "ExtensiveMedicalSystem" >> "UnitVariables" >> _unitVariable;
-};
-if isNull _unitVariableConfig exitWith {
+if !(_unit getVariable["XMS_Unit_Initialization_var_Initialized", false]) exitWith {
     throw [
-        XMS_UNIT_VARIABLES_EXCEPTION_FAILED_TO_FIND_USER_VARIABLE,
-        format ["No user variable with the name '%1' was found.", _unitVariable],
+        XMS_UNIT_VARIABLES_EXCEPTION_UNIT_NOT_INITIALIZED,
+        "The '_unit' argument must be initialized by the Extensive Medical System.",
         _this
     ];
 };
 
-// Get the variable hashmap and the variable name.
-private _unitVariable = _unitVariableConfig call XMS_Unit_Variables_fnc_CreateVariable;
+private _unitVariable = _unitVariableName call XMS_Unit_Variables_GetVariableDeclaration;
 private _variableName = _unitVariable get "name";
 
 // Return the current value of the variable.
-private _currentValue = _unit getVariable [_variableName, _unitVariable get "defaultValue"];
+private _currentValue = _unit getVariable [_variableName, _unitVariable get "default"];
 _currentValue
 
 #include "\z\xms\scripting\footer.hpp"

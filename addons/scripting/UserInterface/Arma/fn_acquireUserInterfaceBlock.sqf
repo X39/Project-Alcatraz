@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -16,8 +18,6 @@
  *          <HashMapObject> // Object to automatically release the block when it is no longer used.
  *      ]
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
 
 isNil {
     XMS_UserInterface_Arma_var_UiBlockCounter = XMS_UserInterface_Arma_var_UiBlockCounter + 1;

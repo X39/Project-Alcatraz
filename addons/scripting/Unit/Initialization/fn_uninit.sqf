@@ -1,3 +1,5 @@
+#include "\z\xms\scripting\default.hpp"
+#include "\z\xms\scripting\header.hpp"
 /*
  * Author:
  *      xms
@@ -21,8 +23,6 @@
  * Return:
  *      -/-
  */
-#include "\z\xms\scripting\default.hpp"
-#include "\z\xms\scripting\header.hpp"
 
 
 params [
@@ -68,5 +68,12 @@ if (_handleDamageEventHandler != -1) then { _unit removeEventHandler ["HandleDam
 
 _unit setVariable ["XMS_Unit_Initialization_var_Initialized", false];
 _unit setVariable ["XMS_Unit_Initialization_var_InitializingChanges", false];
+
+// Uninitialize all unit variables
+{
+    private _name = _x get "name";
+    private _defaultValue = _x get "default";
+    [_unit, _name, _defaultValue] call XMS_Unit_Variables_fnc_ClearVariable;
+} forEach ([] call XMS_Unit_Variables_fnc_GetAllVariables);
 
 #include "\z\xms\scripting\footer.hpp"

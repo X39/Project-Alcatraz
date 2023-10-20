@@ -32,9 +32,17 @@ class ExtensiveMedicalsystem
     {
         #include "Drugs\include.hpp"
     };
+    class Simulation
+    {
+        #include "Simulation\include.hpp"
+    };
     class UnitVariables
     {
         #include "UnitVariables\include.hpp"
+    };
+    class VisualEffects
+    {
+        #include "VisualEffects\include.hpp"
     };
     class Wounds
     {

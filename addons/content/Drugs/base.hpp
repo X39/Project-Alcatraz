@@ -7,14 +7,7 @@ class Base                         // Base class to inherit from
     BloodThikness = 1;             // Sets how much this drug will affect the hemostasis  [0 -> reduced blood thickness, 1 -> no effect, 2 -> increased blood thickness]
     Pain = 1;                      // Sets how this drug changes the patiens pain         [0 -> reduced pain, 1 -> no effect, 2 -> increased pain]
 
-    class VisualEffects            // Sets how this drug affects the patients vision
-    {
-        Blackening = 1;            // Sets how this drug affects the blackening           [0 -> darker, 1 -> no effect, 2 -> improve darkening]
-        Whiteness = 1;             // Sets how this drug affects the whiteness            [0 -> lighter, 1 -> no effect, 2 -> improve whiteness]
-        Noise = 1;                 // Sets how this drug affects the noise                [0 -> less noise, 1 -> no effect, 2 -> more noise]
-        Coloring = 1;              // Sets how this drug affects the coloring vision      [0 -> grey, 1 -> no effect, 2 -> "stronger" colors]
-        ChromaticAberration = 1;   // Sets how this drug affects the chromatic aberration [0 -> less, 1 -> no effect, 2 -> more]
-    };
+    VisualEffects[] = {};          // Visual effects to apply to the patient when this drug is consumed
 
     class Affects                  // How this drug interacts with other drugs
     {

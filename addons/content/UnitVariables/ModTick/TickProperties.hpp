@@ -3,5 +3,5 @@ class Tick_Properties : Base
 {
     Description = "Contains various properties of the ticks specific to the corresponding unit";
     Default = "[]";
-    Local = true;
+    synchronization = -1;
 };
