@@ -30,7 +30,8 @@ if (isNull _config) exitWith {
 };
 
 private _hashMap = createHashMapFromArray [
-    ["scope", getNumber (_config >> "scope")],
+    ["declaredName", configName _config],
+
     ["alwaysDetected", getNumber (_config >> "scope") > 0],
     ["maximum", getNumber (_config >> "maximum")],
     ["baseChance", getNumber (_config >> "baseChance")],

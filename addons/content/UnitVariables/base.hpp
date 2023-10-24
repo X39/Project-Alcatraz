@@ -1,6 +1,7 @@
 //class name will be appended to the variable prefix
 class Base
 {
+    scope = inherit;            // Scope of the variable, can be 0 (inherit) or 1 (public)
     description = "";           // What does this variable do (used for debuging).
     default = "0";              // Default Value, gets call compiled
     synchronization = 0;        // Sets how fast this variable should be synchronized, where -1 is never (local)

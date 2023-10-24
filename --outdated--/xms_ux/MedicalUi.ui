@@ -6,9 +6,7 @@ class MedicalUi {
     ArmaStudio_Width = 1920;
     ArmaStudio_Height = 1080;
     class controlsBackground {
-    };
-    class controls {
-        class MY_STATIC_714905743 {
+        class LeftHeader_Background {
             type = 0;
             autoplay = false;
             loops = 0;
@@ -38,7 +36,7 @@ class MedicalUi {
             fade = 0;
             url = "";
         };
-        class MY_STATIC_1576932549 {
+        class CenterHeader_Background {
             type = 0;
             autoplay = false;
             loops = 0;
@@ -68,7 +66,7 @@ class MedicalUi {
             fade = 0;
             url = "";
         };
-        class MY_STATIC_816353475 {
+        class TopRightHeader_Background {
             type = 0;
             autoplay = false;
             loops = 0;
@@ -98,7 +96,7 @@ class MedicalUi {
             fade = 0;
             url = "";
         };
-        class MY_STATIC_549518866 {
+        class LeftContent_Background {
             type = 0;
             autoplay = false;
             loops = 0;
@@ -128,7 +126,7 @@ class MedicalUi {
             fade = 0;
             url = "";
         };
-        class MY_STATIC_1257068962 {
+        class CenterContent_Background {
             type = 0;
             autoplay = false;
             loops = 0;
@@ -158,7 +156,7 @@ class MedicalUi {
             fade = 0;
             url = "";
         };
-        class MY_STATIC_952880870 {
+        class TopRightContent_Background {
             type = 0;
             autoplay = false;
             loops = 0;
@@ -188,6 +186,68 @@ class MedicalUi {
             fade = 0;
             url = "";
         };
+        class RightBottomHeader_Background {
+            type = 0;
+            autoplay = false;
+            loops = 0;
+            lineSpacing = 0;
+            colorShadow[] = { 0, 0, 0, 0 };
+            blinkingPeriod = 0;
+            idc = -1;
+            moving = false;
+            style = 0;
+            x = "safezoneX + (1419.99936 / 1920) * safezoneW";
+            y = "safezoneY + (560.00052 / 1080) * safezoneH";
+            w = "(480 / 1920) * safezoneW";
+            h = "(39.99996 / 1080) * safezoneH";
+            sizeEx = 0.0799999982118607;
+            font = "TahomaB";
+            colorText[] = { 1, 1, 1, 1 };
+            colorDisabled[] = { 0, 0, 0, 0 };
+            colorBackground[] = { 0, 0, 0, 0.749019607843137 };
+            text = "Observations";
+            shadow = 1;
+            show = true;
+            tooltip = "";
+            tooltipColorText[] = { 0, 0, 0, 0 };
+            tooltipColorShade[] = { 0, 0, 0, 0 };
+            tooltipColorBox[] = { 0, 0, 0, 0 };
+            deletable = false;
+            fade = 0;
+            url = "";
+        };
+        class BottomRightContent_Background {
+            type = 0;
+            autoplay = false;
+            loops = 0;
+            lineSpacing = 0;
+            colorShadow[] = { 0, 0, 0, 0 };
+            blinkingPeriod = 0;
+            idc = -1;
+            moving = false;
+            style = 0;
+            x = "safezoneX + (1419.99936 / 1920) * safezoneW";
+            y = "safezoneY + (619.99992 / 1080) * safezoneH";
+            w = "(480 / 1920) * safezoneW";
+            h = "(439.99956 / 1080) * safezoneH";
+            sizeEx = 0.0399999991059303;
+            font = "TahomaB";
+            colorText[] = { 0, 0, 0, 1 };
+            colorDisabled[] = { 0, 0, 0, 0 };
+            colorBackground[] = { 0, 0, 0, 0.749019607843137 };
+            text = "";
+            shadow = 1;
+            show = true;
+            tooltip = "";
+            tooltipColorText[] = { 0, 0, 0, 0 };
+            tooltipColorShade[] = { 0, 0, 0, 0 };
+            tooltipColorBox[] = { 0, 0, 0, 0 };
+            deletable = false;
+            fade = 0;
+            url = "";
+        };
+    };
+    class controls {
         class MY_STATIC_1443495731 {
             type = 0;
             autoplay = false;
@@ -478,66 +538,6 @@ class MedicalUi {
             colorDisabled[] = { 0, 0, 0, 0 };
             colorBackground[] = { 1, 1, 1, 0 };
             text = "ITEM LONG DESCRIPTION & POSSIBLY THE ACTUAL STAT-CHANGE EFFECTS THIS HAS";
-            shadow = 1;
-            show = true;
-            tooltip = "";
-            tooltipColorText[] = { 0, 0, 0, 0 };
-            tooltipColorShade[] = { 0, 0, 0, 0 };
-            tooltipColorBox[] = { 0, 0, 0, 0 };
-            deletable = false;
-            fade = 0;
-            url = "";
-        };
-        class MY_STATIC_827599617 {
-            type = 0;
-            autoplay = false;
-            loops = 0;
-            lineSpacing = 0;
-            colorShadow[] = { 0, 0, 0, 0 };
-            blinkingPeriod = 0;
-            idc = -1;
-            moving = false;
-            style = 0;
-            x = "safezoneX + (1419.99936 / 1920) * safezoneW";
-            y = "safezoneY + (560.00052 / 1080) * safezoneH";
-            w = "(480 / 1920) * safezoneW";
-            h = "(39.99996 / 1080) * safezoneH";
-            sizeEx = 0.0799999982118607;
-            font = "TahomaB";
-            colorText[] = { 1, 1, 1, 1 };
-            colorDisabled[] = { 0, 0, 0, 0 };
-            colorBackground[] = { 0, 0, 0, 0.749019607843137 };
-            text = "Observations";
-            shadow = 1;
-            show = true;
-            tooltip = "";
-            tooltipColorText[] = { 0, 0, 0, 0 };
-            tooltipColorShade[] = { 0, 0, 0, 0 };
-            tooltipColorBox[] = { 0, 0, 0, 0 };
-            deletable = false;
-            fade = 0;
-            url = "";
-        };
-        class MY_STATIC_1109812271 {
-            type = 0;
-            autoplay = false;
-            loops = 0;
-            lineSpacing = 0;
-            colorShadow[] = { 0, 0, 0, 0 };
-            blinkingPeriod = 0;
-            idc = -1;
-            moving = false;
-            style = 0;
-            x = "safezoneX + (1419.99936 / 1920) * safezoneW";
-            y = "safezoneY + (619.99992 / 1080) * safezoneH";
-            w = "(480 / 1920) * safezoneW";
-            h = "(439.99956 / 1080) * safezoneH";
-            sizeEx = 0.0399999991059303;
-            font = "TahomaB";
-            colorText[] = { 0, 0, 0, 1 };
-            colorDisabled[] = { 0, 0, 0, 0 };
-            colorBackground[] = { 0, 0, 0, 0.749019607843137 };
-            text = "";
             shadow = 1;
             show = true;
             tooltip = "";

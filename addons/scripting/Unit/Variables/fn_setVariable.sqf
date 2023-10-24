@@ -51,7 +51,7 @@ if !(_unit getVariable["XMS_Unit_Initialization_var_Initialized", false]) exitWi
 };
 
 // Find the unit variable config.
-private _unitVariable = _unitVariableName call XMS_Unit_Variables_GetVariableDeclaration;
+private _unitVariable = _unitVariableName call XMS_Unit_Variables_fnc_GetVariableDeclaration;
 private _variableName = _unitVariable get "name";
 private _variableSynchronization = _unitVariable get "synchronization";
 

@@ -23,7 +23,7 @@ params [
 ];
 
 private _variable = XMS_Unit_Variables_var_Cache get _variableName;
-if isNull _variable exitWith {
+if isNil "_variable" exitWith {
     throw [
         XMS_UNIT_VARIABLES_EXCEPTION_FAILED_TO_FIND_USER_VARIABLE,
         format ["No user variable with the name '%1' was found.", _variableName],

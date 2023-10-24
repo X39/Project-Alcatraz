@@ -22,6 +22,7 @@
 ASSIGN_IF_NIL(XMS_Unit_HitDetection_var_LastHitPartResult, false);
 ASSIGN_IF_NIL(XMS_Unit_Variables_var_DelayedChanges, createHashMap);
 ASSIGN_IF_NIL(XMS_Unit_Variables_var_Cache, createHashMap);
+ASSIGN_IF_NIL(XMS_Unit_Wounding_var_Cache, createHashMap);
 
 // Configurable
 ASSIGN_IF_NIL(XMS_Unit_HitDetection_var_PenetrationDamageThreshold, 0.1);

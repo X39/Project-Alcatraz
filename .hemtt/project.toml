@@ -22,6 +22,9 @@ build = 0
 
 [asc]
 enabled = false
+exclude = [
+    "scripting/UserInterface/Debug/fn_postInit.sqf",
+]
 
 [hemtt.launch]
 workshop = [
@@ -30,4 +33,5 @@ workshop = [
     "450814997",  # CBA_A3
 ]
 parameters = [
+    "-preprocDefine=CMD__XMS_DEBUG"
 ]

@@ -37,32 +37,29 @@ params [
     ["_chance", 0, [0]]
 ];
 
-private _configClassesFilter = "getNumber (_x >> 'scope') > 0 && (getNumber (_x >> 'Infliction' >> 'HitDetection' >> 'enabled') > 0)";
-private _configWounds = _configClassesFilter configClasses (configFile >> "ExtensiveMedicalsystem" >> "Wounds");
-private _missionConfigWounds = _configClassesFilter configClasses (configFile >> "ExtensiveMedicalsystem" >> "Wounds");
-_configWounds append _missionConfigWounds;
+private _woundings = XMS_Unit_Wounding_fnc_GetAllWoundingDeclarations;
 
 private _outWounds = [];
 {
-    private _baseChance = getNumber (_x >> "baseChance");
+    private _baseChance = _woundings get "baseChance";
     if (_baseChance <= _chance) then { continue; };
-    private _inflictionChance = getNumber (_x >> "Infliction" >> "HitDetection" >> "chance");
+    private _inflictionChance = _woundings get "Infliction" get "HitDetection" get "chance";
     if (_inflictionChance <= _chance) then { continue; };
-    private _sections = getArray (_x >> "Infliction" >> "HitDetection" >> "sections");
+    private _sections = _woundings get "Infliction" get "HitDetection" get "sections";
     if !(count _sections == 0 || _section in _sections) then { continue; };
-    private _requirePenetration = getNumber (_x >> "Infliction" >> "HitDetection" >> "requirePenetration");
+    private _requirePenetration = _woundings get "Infliction" get "HitDetection" get "requirePenetration";
     if (_requirePenetration > _penetration) then { continue; };
-    private _damageThreshold = getNumber (_x >> "Infliction" >> "HitDetection" >> "damageThreshold");
+    private _damageThreshold = _woundings get "Infliction" get "HitDetection" get "damageThreshold";
     if (_damageThreshold > _damage) then { continue; };
-    private _radiusThreshold = getNumber (_x >> "Infliction" >> "HitDetection" >> "radiusThreshold");
+    private _radiusThreshold = _woundings get "Infliction" get "HitDetection" get "radiusThreshold";
     if (_radiusThreshold > _radius) then { continue; };
-    private _velocityThreshold = getNumber (_x >> "Infliction" >> "HitDetection" >> "velocityThreshold");
+    private _velocityThreshold = _woundings get "Infliction" get "HitDetection" get "velocityThreshold";
     if (_velocityThreshold > _velocity) then { continue; };
-    private _hitTypes = getArray (_x >> "Infliction" >> "HitDetection" >> "hitTypes");
+    private _hitTypes = _woundings get "Infliction" get "HitDetection" get "hitTypes";
     if !(count _hitTypes == 0 || _hitType in _hitTypes) then { continue; };
     private _wound = _x call XMS_Unit_Wounding_fnc_CreateWound;
-    _outWounds pushBack _wound;
-} forEach _configWounds;
+    _outWounds pushBack _wound get "declaredName";
+} forEach _woundings;
 
 _outWounds
 
