@@ -32,16 +32,15 @@ addMissionEventHandler ["Draw3D", {
     if (isNull _cursorObject) exitWith {};
     if !(_cursorObject getVariable ["XMS_Unit_Initialization_var_Initialized", false]) exitWith {};
     
-    private _unitVariables = [];
+    private _position = ASLToAGL getPosASLVisual _cursorObject;
     {
         private _name = _x get "name";
         private _declaredName = _x get "declaredName";
         private _value = [_cursorObject, _declaredName] call XMS_Unit_Variables_fnc_GetVariable;
-        _unitVariables pushBack format ["%1: %2", _declaredName, _value];
+        private _text = format ["%1: %2", _declaredName, _value];
+        drawIcon3D ["targetIcon.paa", [1,1,1,1], _position, 1, 1, 45, _text, 1, 0.05, "TahomaB"];
+        _position = _position vectorAdd [0, 0, 0.1];
     } forEach ([] call XMS_Unit_Variables_fnc_GetAllVariables);
-
-    private _text = _unitVariables joinString "\n";
-    drawIcon3D ["targetIcon.paa", [1,1,1,1], ASLToAGL getPosASLVisual _cursorObject, 1, 1, 45, _text, 1, 0.05, "TahomaB"];
 }];
 
 #endif

@@ -1,5 +1,7 @@
 #include "base.hpp"
 
+#include "Drugs.hpp"
+
 #include "CardiovascularSystem/CardiovascularSystem_BloodPressure.hpp"
 #include "CardiovascularSystem/CardiovascularSystem_BloodValue.hpp"
 #include "CardiovascularSystem/CardiovascularSystem_HeartRate.hpp"

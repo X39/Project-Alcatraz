@@ -48,11 +48,13 @@ if !_isInVehicle then {
 // Increase: log(x) * 80 = ~ curve of heart rate change
 // Decrease: x * 0.9 + 6 = reduce heart rate by 10% and add 6 to make sure it doesn't go below 60 by itself
 if (_heartRateChange > 0) then {
-    _heartRate = _heartRate + log(_heartRateChange) * 80;
+    _heartRate = _heartRate + log _heartRateChange * 80;
 } else {
     _heartRate = _heartRate * 0.9 + 6;
 };
 #pragma endregion Heart rate
+
+// BloodThickness / hemostasis
 
 // Write out current values
 [_unit, "CardiovascularSystem_BloodPressure", _bloodPressure] call XMS_Unit_Variable_fnc_SetVariable;

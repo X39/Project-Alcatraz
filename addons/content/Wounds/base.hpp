@@ -158,7 +158,6 @@ class Base                                  // Base class for all wounds
 
     class Affection                         // Allows to configure how this wound affects the body.
     {
-        
         class Bleeding                      // Configuration for bleeding.
         {
             enabled = false;                // Whether or not this wound can cause bleeding.

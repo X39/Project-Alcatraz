@@ -1,49 +1,57 @@
-class Base                         // Base class to inherit from
+class Base                                  // Base class to inherit from
 {
-    Displayname = "";              // Displayed name of given drug
-    ApplyCoefPerSecond = 0;        // The coeficient of how fast this drug will be applied to the body                   [0 -> never happens, 1 -> instant]
-    MaxValue = -1;                 // Sets max value "the body of a patient can consume" (max value in system reachable) [-1 -> no limit]
+    scope = inherit;                        // 0 -> inherit only, 1 -> actual drug
+    Displayname = "";                       // Displayed name of given drug
+    MaxValue = -1;                          // Sets max value "the body of a patient can consume" (max value in system reachable) [-1 -> no limit]
+    MaxConcentration = 1;                   // Sets max concentration considered "safe" for the body to consume. This is used to calculate the overdose effect.
+    MinBreakdownValuePerSecond = 0;         // Sets the minimum value that will be removed from the body per second.              [0 -> never remove, 1 -> remove 1 per second, etc.]
+    MidBreakdownValuePerSecond = 0;         // Sets the mid value that will be removed from the body per second.                  [0 -> no mid, 1 -> remove 1 per second, etc.]
+    MaxBreakdownValuePerSecond = 0;         // Sets the maximum value that will be removed from the body per second.              [0 -> no maximum, 1 -> remove 1 per second, etc.]
+    MinConsumptionValuePerSecond = 0;       // Sets the minimum value that will be added to the body per second.                  [0 -> no minimum, 1 -> add 1 per second, etc.]
+    MidConsumptionValuePerSecond = 0;       // Sets the mid value that will be added to the body per second.                      [0 -> no mid, 1 -> add 1 per second, etc.]
+    MaxConsumptionValuePerSecond = 0;       // Sets the maximum value that will be added to the body per second.                  [0 -> no maximum, 1 -> add 1 per second, etc.]
 
-    BloodThikness = 1;             // Sets how much this drug will affect the hemostasis  [0 -> reduced blood thickness, 1 -> no effect, 2 -> increased blood thickness]
-    Pain = 1;                      // Sets how this drug changes the patiens pain         [0 -> reduced pain, 1 -> no effect, 2 -> increased pain]
+    VisualEffects[] = {};                   // Visual effects to apply to the patient when this drug is consumed.
+                                            // Strength of the effect is based on the concentration of the drug in the body.
 
-    VisualEffects[] = {};          // Visual effects to apply to the patient when this drug is consumed
-
-    class Affects                  // How this drug interacts with other drugs
+    class DrugInteraction
     {
-        class Base                 // Base class to inherit from
+        class Affects                       // How this drug interacts with other drugs
         {
-            name = "";             // Classname of the drug to affect
-            calculation = "";      // The calculation to use to affect the drug. Has _selfValue and _affectedValue variables available. Must return a number.
+            class Base                      // Base class to inherit from
+            {
+                name = "";                  // Classname of the drug to affect
+                calculation = "";           // The calculation to use to affect the drug. Has _selfValue and _affectedValue variables available. Must return a number.
+            };
+        };
+        
+        class AffectedBy                    // Same as Affects, but in reverse (Note that variables stay the same, perspective wise so _selfValue contains THIS drugs value)
+        {
+            class Base                      // Base class to inherit from
+            {
+                name = "";                  // Classname of the drug to affect
+                calculation = "";           // The calculation to use to affect the drug. Has _selfValue and _affectedValue variables available. Must return a number.
+            };
+        };
+    };
+    // ToDo: Find a way to make this work with ticks
+    class Affection                         // Allows to configure how this drug affects the body.
+    {                                       // Note that all effects are always depending on the concentration, present in the body.
+        class Heartrate                     // Configuration for heartrate.
+        {
+            enabled = false;                // Whether or not this drug can affect the heartrate.
+            modifier = 1;                   // How much this drug affects the heartrate. [0 -> no heartRate, 1 -> normal heartrate, 2 -> double heartrate, etc.]
         };
     };
     
-    class AffectedBy               // Same as Affects, but in reverse (Note that variables stay the same, perspective wise so _selfValue contains THIS drugs value)
+    class Items                             // The items which can be used to consume this drug. Multiple items can be used to consume the same drug, allowing for different sizes of doses.
     {
-        class Base                 // Base class to inherit from
+        class Base                          // Base class to inherit from
         {
-            name = "";             // Classname of the drug to affect
-            calculation = "";      // The calculation to use to affect the drug. Has _selfValue and _affectedValue variables available. Must return a number.
-        };
-    };
-    
-    class BlackOut                 // Allows to set how, if and when this drug will cause a blackout
-    {
-        class Base                 // Base class to inherit from
-        {
-            stage = 0;             // BlackOut Stage to fall into, allowed: 0, 2, 3. Note that 0 is the "no blackout" stage, effectively forcing the unit to wake up under any condition.
-            condition = "false";   // Condition on which you will fall into set stage, %1 contains current unit, %2 contains current drug value, %3 contains max drug value
-        };
-    };
-    
-    class Items                    // The items which can be used to consume this drug. Multiple items can be used to consume the same drug, allowing for different sizes of doses.
-    {
-        class Base                 // Base class to inherit from
-        {
-            displayName = "";      // Display name of this item in the UI
-            image = "";            // Display image of this item in the UI
-            classname = "";        // Item classname to consume
-            value = 0;            // The value to apply to the body when consumed. This must always be a number.
+            displayName = "";               // Display name of this item in the UI
+            image = "";                     // Display image of this item in the UI
+            classname = "";                 // Item classname to consume
+            value = 0;                      // The value to apply to the body when consumed. This must always be a number.
         };
     };
 };
